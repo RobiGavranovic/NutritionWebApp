@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/RobiGavranovic/NutritionWebApp/backend/controllers"
 	"github.com/RobiGavranovic/NutritionWebApp/backend/initializers"
 	"github.com/gin-gonic/gin"
@@ -16,5 +18,5 @@ func main() {
 
 	router.GET("/getRandomMeals/:numOfMeals", controllers.GetNRandomMeals)
 
-	router.Run()
+	router.Run(":" + os.Getenv("PORT"))
 }
