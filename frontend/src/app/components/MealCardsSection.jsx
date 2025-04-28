@@ -31,7 +31,7 @@ export default function MealCardsSection({meals}) {
               className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white/70 z-50"
               onClick={() => setSelectedMeal(null)}
             >
-              <div className="p-8 bg-white shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg">
+              <div className="p-8 bg-white shadow-lg max-w-3xl w-full md:h-[600px] overflow-y-auto rounded-lg">
                 <img src={selectedMeal.StrMealThumb} alt={selectedMeal.StrMeal} className="w-full h-auto rounded max-w-md mx-auto" />
                 
                 <h2 className="text-2xl font-bold mt-4">{selectedMeal.StrMeal}</h2>

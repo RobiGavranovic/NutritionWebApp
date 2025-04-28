@@ -6,7 +6,7 @@ export default async function Home() {
   const res = await fetch('http://localhost:3200/getRandomMeals/15');
   const data = await res.json();
   console.log(data);
-  
+
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900">
 
@@ -25,14 +25,14 @@ export default async function Home() {
 
         {/* Right Side */}
         <div className="sm:mt-0 md:mt-1 md:ml-5 md:mr-5 flex flex-col justify-start lg:pt-8">
-          
+
           {/* Navbar */}
           <nav className="sm:mt-0 md:mt-0 text-2xl md:text:2xl lg:text-2xl grid grid-cols-2 border-b border-primary lg:pb-4 text-center font-medium">
             <div className="flex justify-center">
-              <a href="#register" className="hover:underline">Register</a>
+              <a href="register" className="hover:underline">Register</a>
             </div>
             <div className="flex justify-center">
-              <a href="#login" className="hover:underline">Login</a>
+              <a href="login" className="hover:underline">Login</a>
             </div>
           </nav>
 
@@ -50,8 +50,8 @@ export default async function Home() {
 
       </div>
 
-       {/* Meals Cards */}
-       <MealCardsSection meals={data.Meals} />
+      {/* Meals Cards */}
+      <MealCardsSection meals={data.Meals} />
 
     </main>
   )
