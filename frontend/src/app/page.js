@@ -1,6 +1,16 @@
-export default function Home() {
+import MealCardsSection from '@/app/components/MealCardsSection';
+
+
+export default async function Home() {
+  // Fetch data directly inside your server component
+  const res = await fetch('http://localhost:3200/getRandomMeals/15');
+  const data = await res.json();
+  console.log(data);
+  
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900">
+
+      {/* Left AND Right Side */}
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full border-primary border-t border-b">
 
         {/* Left Side */}
@@ -39,6 +49,10 @@ export default function Home() {
         </div>
 
       </div>
+
+       {/* Meals Cards */}
+       <MealCardsSection meals={data.Meals} />
+
     </main>
   )
 }

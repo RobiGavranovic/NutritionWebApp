@@ -46,24 +46,28 @@ func GetNRandomMeals(c *gin.Context) {
 		return
 	}
 
-	meals := []models.Meals{}
+	meals := models.Meals{
+		Meals: []models.Meal{},
+	}
 
 	// Map used to track already added meal IDS (avoid duplicates)
 	seen := make(map[string]bool)
 
 	// Fetch meals
-	for len(meals) < numOfMeals {
-		meal, err := GetRandomMeal()
+	for len(meals.Meals) < numOfMeals {
+		mealWrapper, err := GetRandomMeal()
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get random meal from MealDB"})
 			return
 		}
 
-		id := meal.Meals[0].IDMeal
+		meal := mealWrapper.Meals[0] //extract meal from meals wrapper
+
+		id := meal.IDMeal
 
 		// Check for duplicates
 		if !seen[id] {
-			meals = append(meals, meal)
+			meals.Meals = append(meals.Meals, meal)
 			seen[id] = true
 		}
 	}
