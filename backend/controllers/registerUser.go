@@ -56,7 +56,14 @@ func RegisterUser(c *gin.Context) {
 	}
 
 	// Check If User Already Exists
-	//#TODO vrn da je ze registered - forntend naj mu izpise da ma ze racun, naj se login-a
+	var existingUser models.User
+	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&existingUser).Error; err == nil {
+		// User found
+		c.JSON(http.StatusConflict, gin.H{
+			"error": "User already exists, please login instead",
+		})
+		return
+	}
 
 	// Create User In DB
 	result := initializers.DB.Create(&user)

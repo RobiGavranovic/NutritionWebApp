@@ -13,7 +13,11 @@ export default function Register() {
     );
 }
 
-async function onFinishedUserSetUp(profileData) {
+async function onFinishedUserSetUp(profileData, setProfileFinished, setErrorMessage) {
+    setTimeout(() => {
+        setProfileFinished(true);
+    }, 400);
+
     const res = await fetch('http://localhost:3200/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,18 +29,24 @@ async function onFinishedUserSetUp(profileData) {
         }),
     });
 
-    console.log(profileData);
-
     if (res.ok) {
         console.log("OKE");
     } else {
-        console.error("NOT OKE");
+        const errorData = await res.json();
+        // Instruction : Go Login
+        setTimeout(() => {
+            if (errorData.error === "User already exists, please login instead") {
+                setErrorMessage("Account already exists. Please log in!");
+            }
+        }, 300);
     }
 }
 
 function MainContent() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [googleTokenResponse, setGoogleTokenResponse] = useState(null);
+    const [profileFinished, setProfileFinished] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const login = useGoogleLogin({
         onSuccess: async (TokenResponse) => {
@@ -99,7 +109,7 @@ function MainContent() {
                         </motion.button>
                     )}
 
-                    {isAuthenticated && (
+                    {isAuthenticated && !profileFinished && (
                         <motion.div
                           key="user-profile-setup"
                           initial={{ opacity: 0, y: 50 }}
@@ -110,8 +120,21 @@ function MainContent() {
                         >
                             <UserProfileSetup 
                               googleTokenResponse={googleTokenResponse}
-                              onFinish={onFinishedUserSetUp}
+                              onFinish={(finalData) => onFinishedUserSetUp(finalData, setProfileFinished, setErrorMessage)}
                             />
+                        </motion.div>
+                    )}
+
+                    {errorMessage && (
+                        <motion.div
+                        key="error-message"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.4 }}
+                        className="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative mt-10 text-center"
+                        >
+                        {errorMessage}
                         </motion.div>
                     )}
                 </AnimatePresence>

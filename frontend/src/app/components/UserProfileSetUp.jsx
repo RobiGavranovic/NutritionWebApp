@@ -14,8 +14,16 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
     const [intolerances, setIntolerances] = useState('');
 
     const currentTab = steps[currentIndex];
+    const [errorUsername, setErrorUsername] = useState(false);
 
     const handleNext = () => {
+        if (currentTab === 'username' && username.trim() === '') {
+            setErrorUsername(true);
+            return; // block moving forward
+        }
+
+        setErrorUsername(false);
+
         if (currentIndex < steps.length - 1) {
             setCurrentIndex(currentIndex + 1);
         }
@@ -51,8 +59,15 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
     const [addedAllergens, setAddedAllergens] = useState([]);
     const [addedIntolerances, setAddedIntolerances] = useState([]);
 
+    const [isExiting, setIsExiting] = useState(false);
+
     return (
-        <div className="flex flex-col items-center justify-start w-full bg-gray-100 mt-6">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          animate={isExiting ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col items-center justify-start w-full bg-gray-100 mt-6"
+        >
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 
                 {/* Tabs Indicator */}
@@ -87,6 +102,13 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                           value={username}
                           onChange={(e) => setUsername(e.target.value)}
                         />
+
+                        {/* Empty Username Warning */}
+                        {errorUsername && (
+                            <p className="text-red-500 text-center text-sm">
+                                Please insert a username before proceeding.
+                            </p>
+                        )}
                     </TabsContent>
 
                     <TabsContent value="allergens" className="flex flex-col gap-4">
@@ -196,6 +218,7 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
 
                         <button
                           onClick={() => {
+                            setIsExiting(true);
                             const finalData = {
                                 tokenResponse: googleTokenResponse,
                                 username: username,
@@ -256,6 +279,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     );
 }
