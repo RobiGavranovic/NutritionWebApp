@@ -27,6 +27,7 @@ func main() {
 
 	router.GET("/getRandomMeals/:numOfMeals", controllers.GetNRandomMeals)
 	router.POST("/register", controllers.RegisterUser)
+	router.POST("/login", controllers.LoginUser)
 
 	router.Run(":" + os.Getenv("PORT"))
 }
