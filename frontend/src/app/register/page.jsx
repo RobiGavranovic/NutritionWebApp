@@ -74,7 +74,7 @@ function MainContent() {
                 {/* Right Side */}
                 <div className="sm:mt-0 md:mt-1 md:ml-5 md:mr-5 flex flex-col justify-start lg:pt-8">
                     <nav className="sm:mt-0 md:mt-0 text-2xl md:text:2xl lg:text-2xl flex justify-center border-b border-primary lg:pb-4 font-medium">
-                        <a href="#login" className="hover:underline">Login</a>
+                        <a href="login" className="hover:underline">Login</a>
                     </nav>
 
                     <div className="mt-6 mb-6 ml-0 mr-0 border-primary pb-0">

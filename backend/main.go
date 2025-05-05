@@ -19,7 +19,7 @@ func main() {
 
 	// Allow CORS for local development ONLY - DELETE THIS IN FOR PROD
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3000"}, // your frontend
+		AllowOrigins:     []string{"http://localhost:3000", "http://127.0.0.1:3000"}, // your frontend
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		AllowCredentials: true,
@@ -28,6 +28,10 @@ func main() {
 	router.GET("/getRandomMeals/:numOfMeals", controllers.GetNRandomMeals)
 	router.POST("/register", controllers.RegisterUser)
 	router.POST("/login", controllers.LoginUser)
+
+	authorized := router.Group("/")
+	authorized.Use(controllers.RequireAuth)
+	authorized.GET("/profile", controllers.GetProfileData)
 
 	router.Run(":" + os.Getenv("PORT"))
 }

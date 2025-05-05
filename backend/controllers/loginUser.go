@@ -68,8 +68,12 @@ func LoginUser(c *gin.Context) {
 		return
 	}
 
+	// Use This In Prod, We Need HTTP For LocalHost Testing, So Secure = false
+	//c.SetCookie("session_token", token, 3600*2, "/", "", true, true)
+	c.SetCookie("session_token", token, 3600*2, "/", "localhost", false, true)
+
 	c.JSON(http.StatusOK, gin.H{
-		"token": token,
+		"message": "Login successful",
 	})
 
 }

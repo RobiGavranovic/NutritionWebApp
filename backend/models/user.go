@@ -28,3 +28,9 @@ type GoogleUser struct {
 	Name          string `json:"name"`
 	Picture       string `json:"picture"`
 }
+
+type Profile struct {
+	Username     string
+	Allergens    pq.StringArray
+	Intolerances pq.StringArray
+}
