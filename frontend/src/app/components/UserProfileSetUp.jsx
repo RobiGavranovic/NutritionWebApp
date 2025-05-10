@@ -5,36 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X, Plus } from "lucide-react";
 
-const steps = ["username", "allergens", "intolerances"];
+const steps = ["username", "gender", "allergens", "intolerances"];
 
 export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [username, setUsername] = useState("");
+  const [gender, setGender] = useState("");
   const [allergens, setAllergens] = useState("");
   const [intolerances, setIntolerances] = useState("");
-
-  const currentTab = steps[currentIndex];
   const [errorUsername, setErrorUsername] = useState(false);
 
-  const handleNext = () => {
-    if (currentTab === "username" && username.trim() === "") {
-      setErrorUsername(true);
-      return; // block moving forward
-    }
-
-    setErrorUsername(false);
-
-    if (currentIndex < steps.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
+  const currentTab = steps[currentIndex];
   const allergenOptions = [
     "Peanuts",
     "Tree Nuts",
@@ -55,11 +36,26 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
     "Sorbitol",
     "Salicylates",
   ];
-
   const [addedAllergens, setAddedAllergens] = useState([]);
   const [addedIntolerances, setAddedIntolerances] = useState([]);
-
   const [isExiting, setIsExiting] = useState(false);
+
+  const handleNext = () => {
+    if (currentTab === "username" && username.trim() === "") {
+      setErrorUsername(true);
+      return;
+    }
+    setErrorUsername(false);
+    if (currentIndex < steps.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   return (
     <motion.div
@@ -69,7 +65,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
       className="flex flex-col items-center justify-start w-full bg-gray-100 mt-6"
     >
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        {/* Tabs Indicator */}
         <Tabs defaultValue="username" value={currentTab}>
           <TabsList className="flex justify-around mb-8 relative border-b border-gray-300">
             {steps.map((tab) => (
@@ -91,7 +86,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
             ))}
           </TabsList>
 
-          {/* Content Section */}
           <TabsContent value="username" className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-center">
               Insert your Username
@@ -103,8 +97,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-
-            {/* Empty Username Warning */}
             {errorUsername && (
               <p className="text-red-500 text-center text-sm">
                 Please insert a username before proceeding.
@@ -112,11 +104,25 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
             )}
           </TabsContent>
 
+          <TabsContent value="gender" className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-center">
+              Select your Gender
+            </h2>
+            <select
+              className="border border-gray-300 p-2 rounded w-full"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="">-- Choose gender --</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </TabsContent>
+
           <TabsContent value="allergens" className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold text-center">
               Select your Allergens
             </h2>
-
             <div className="flex gap-2">
               <select
                 className="border border-gray-300 p-2 rounded flex-grow"
@@ -130,21 +136,18 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                   </option>
                 ))}
               </select>
-
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 rounded"
                 onClick={() => {
                   if (allergens && !addedAllergens.includes(allergens)) {
                     setAddedAllergens([...addedAllergens, allergens]);
-                    setAllergens(""); // Reset select after adding
+                    setAllergens("");
                   }
                 }}
               >
                 <Plus />
               </button>
             </div>
-
-            {/* List of Added Allergens */}
             <div className="flex flex-wrap gap-2 mt-4">
               {addedAllergens.map((allergen) => (
                 <div
@@ -171,7 +174,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
             <h2 className="text-2xl font-bold text-center">
               Select your Intolerances
             </h2>
-
             <div className="flex gap-2">
               <select
                 className="border border-gray-300 p-2 rounded flex-grow"
@@ -179,14 +181,12 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                 onChange={(e) => setIntolerances(e.target.value)}
               >
                 <option value="">-- Choose an intolerance --</option>
-
                 {intoleranceOptions.map((option) => (
                   <option key={option} value={option}>
                     {option}
                   </option>
                 ))}
               </select>
-
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 rounded"
                 onClick={() => {
@@ -202,8 +202,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                 <Plus />
               </button>
             </div>
-
-            {/* List of Added Intolerances */}
             <div className="flex flex-wrap gap-2 mt-4">
               {addedIntolerances.map((intolerance) => (
                 <div
@@ -212,25 +210,25 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
                 >
                   {intolerance}
                   <button
+                    className="ml-2 text-red-500"
                     onClick={() =>
                       setAddedIntolerances(
                         addedIntolerances.filter((item) => item !== intolerance)
                       )
                     }
-                    className="ml-2 text-red-500"
                   >
                     <X />
                   </button>
                 </div>
               ))}
             </div>
-
             <button
               onClick={() => {
                 setIsExiting(true);
                 const finalData = {
                   tokenResponse: googleTokenResponse,
                   username: username,
+                  gender: gender,
                   allergens: addedAllergens,
                   intolerances: addedIntolerances,
                 };
@@ -243,9 +241,7 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
           </TabsContent>
         </Tabs>
 
-        {/* Arrows */}
         <div className="flex justify-between items-center mt-8 relative w-full">
-          {/* Left Arrow container */}
           <div className="w-12 flex justify-start">
             <AnimatePresence>
               {currentIndex > 0 && (
@@ -264,22 +260,22 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
             </AnimatePresence>
           </div>
 
-          {/* Right Arrow container */}
           <div className="w-12 flex justify-end">
             <AnimatePresence>
-              {currentIndex < steps.length - 1 && (
-                <motion.button
-                  key="right-arrow"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={handleNext}
-                  className="p-2 bg-gray-200 rounded-full"
-                >
-                  <ArrowRight size={24} />
-                </motion.button>
-              )}
+              {(currentTab !== "gender" || gender !== "") &&
+                currentIndex < steps.length - 1 && (
+                  <motion.button
+                    key="right-arrow"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={handleNext}
+                    className="p-2 bg-gray-200 rounded-full"
+                  >
+                    <ArrowRight size={24} />
+                  </motion.button>
+                )}
             </AnimatePresence>
           </div>
         </div>

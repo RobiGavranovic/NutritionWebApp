@@ -41,6 +41,10 @@ func GetProfileData(c *gin.Context) {
 	profile.Username = user.Username
 	profile.Allergens = user.Allergens
 	profile.Intolerances = user.Intolerances
+	profile.Age = user.Age
+	profile.Height = user.Height
+	profile.Weight = user.Weight
+	profile.DailyCalorieGoal = user.DailyCalorieGoal
 
 	c.JSON(http.StatusOK, profile)
 }
@@ -184,6 +188,125 @@ func UpdateUsername(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Username updated",
-		"user": user})
+	c.JSON(http.StatusOK, gin.H{"message": "Username updated"})
+}
+
+func UpdatePersonalInfo(c *gin.Context) {
+	// Grab Sent Data
+	var req models.UpdatePersonalInfo
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request body"})
+		return
+	}
+
+	// Verify Google Token
+	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
+		return
+	}
+	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
+
+	// Fetch User Data
+	client := &http.Client{}
+	googleRes, err := client.Do(googleReq)
+	if err != nil || googleRes.StatusCode != http.StatusOK {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
+		return
+	}
+	defer googleRes.Body.Close()
+
+	var userInfo models.GoogleUser
+	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
+		return
+	}
+
+	// Find User By Email
+	var user models.User
+	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+
+	// Update Age, Height, Weight
+	if err := initializers.DB.Model(&user).Updates(models.User{
+		Age:    req.Age,
+		Height: req.Height,
+		Weight: req.Weight,
+	}).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update personal info"})
+		return
+	}
+
+	// Calculate Daily Calories
+	calories := CalculateDailyCalories(req.Age, req.Height, req.Weight, user.Gender)
+
+	// Return OK + Calories
+	c.JSON(http.StatusOK, gin.H{"message": "Age, height and weight updated",
+		"dailyCalorieGoal": calories})
+
+}
+
+func CalculateDailyCalories(age int, height int, weight int, gender string) (dailyCalories float64) {
+	// Daily Calories Based On Gender
+	if gender == "male" {
+		dailyCalories = 10*float64(weight) + 6.25*float64(height) - 5*float64(age) + 5
+	} else if gender == "female" {
+		dailyCalories = 10*float64(weight) + 6.25*float64(height) - 5*float64(age) - 161
+	} else {
+		dailyCalories = 0 // Unknown Gender
+	}
+
+	return dailyCalories
+}
+
+func UpdateDailyCalorieGoal(c *gin.Context) {
+	// Grab Sent Data
+	var req models.UpdateDailyCalorieGoal
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request body"})
+		return
+	}
+
+	// Verify Google Token
+	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
+		return
+	}
+	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
+
+	// Fetch User Data
+	client := &http.Client{}
+	googleRes, err := client.Do(googleReq)
+	if err != nil || googleRes.StatusCode != http.StatusOK {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
+		return
+	}
+	defer googleRes.Body.Close()
+
+	var userInfo models.GoogleUser
+	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
+		return
+	}
+
+	// Find User By Email
+	var user models.User
+	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+
+	// Update Daily Calorie Goal And Type
+	if err := initializers.DB.Model(&user).Updates(models.User{
+		DailyCalorieGoal: req.DailyCalorieGoal,
+		DailyGoalType:    req.DailyGoalType,
+	}).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update daily calorie goal"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Daily calorie goal updated"})
 }

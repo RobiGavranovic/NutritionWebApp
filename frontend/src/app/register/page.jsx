@@ -30,6 +30,7 @@ async function onFinishedUserSetUp(
       username: profileData.username,
       allergens: profileData.allergens,
       intolerances: profileData.intolerances,
+      gender: profileData.gender,
     }),
   });
 

@@ -51,6 +51,7 @@ func RegisterUser(c *gin.Context) {
 		GoogleID:     incomingData.TokenResponse.TokenType,
 		Email:        userInfo.Email,
 		Username:     incomingData.Username,
+		Gender:       incomingData.Gender,
 		Allergens:    incomingData.Allergens,
 		Intolerances: incomingData.Intolerances,
 	}

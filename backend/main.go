@@ -31,12 +31,14 @@ func main() {
 
 	authorized := router.Group("/")
 	authorized.Use(controllers.RequireAuth)
-	authorized.GET("/profile", controllers.GetProfileData)
 
+	authorized.GET("/profile", controllers.GetProfileData)
 	authorized.POST("/logout", controllers.LogoutUser)
 	authorized.PUT("/profile/updateAllergens", controllers.UpdateAllergens)
 	authorized.PUT("/profile/updateIntolerances", controllers.UpdateIntolarences)
 	authorized.PUT("/profile/updateUsername", controllers.UpdateUsername)
+	authorized.PUT("/profile/updatePersonalInfo", controllers.UpdatePersonalInfo)
+	router.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
 
 	router.Run(":" + os.Getenv("PORT"))
 }
