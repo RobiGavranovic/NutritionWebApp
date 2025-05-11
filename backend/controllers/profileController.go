@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"encoding/json"
 	"net/http"
 
 	"github.com/RobiGavranovic/NutritionWebApp/backend/initializers"
@@ -57,32 +56,15 @@ func UpdateAllergens(c *gin.Context) {
 		return
 	}
 
-	// Verify Google Token
-	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
-		return
-	}
-	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
-
-	// Fetch User Data
-	client := &http.Client{}
-	googleRes, err := client.Do(googleReq)
-	if err != nil || googleRes.StatusCode != http.StatusOK {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
-		return
-	}
-	defer googleRes.Body.Close()
-
-	var userInfo models.GoogleUser
-	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
-		return
-	}
-
 	// Find User By Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
 	var user models.User
-	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}
@@ -104,32 +86,15 @@ func UpdateIntolarences(c *gin.Context) {
 		return
 	}
 
-	// Verify Google Token
-	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
-		return
-	}
-	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
-
-	// Fetch User Data
-	client := &http.Client{}
-	googleRes, err := client.Do(googleReq)
-	if err != nil || googleRes.StatusCode != http.StatusOK {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
-		return
-	}
-	defer googleRes.Body.Close()
-
-	var userInfo models.GoogleUser
-	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
-		return
-	}
-
 	// Find User By Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
 	var user models.User
-	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}
@@ -152,32 +117,15 @@ func UpdateUsername(c *gin.Context) {
 		return
 	}
 
-	// Verify Google Token
-	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
-		return
-	}
-	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
-
-	// Fetch User Data
-	client := &http.Client{}
-	googleRes, err := client.Do(googleReq)
-	if err != nil || googleRes.StatusCode != http.StatusOK {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
-		return
-	}
-	defer googleRes.Body.Close()
-
-	var userInfo models.GoogleUser
-	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
-		return
-	}
-
 	// Find User By Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
 	var user models.User
-	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}
@@ -199,32 +147,15 @@ func UpdatePersonalInfo(c *gin.Context) {
 		return
 	}
 
-	// Verify Google Token
-	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
-		return
-	}
-	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
-
-	// Fetch User Data
-	client := &http.Client{}
-	googleRes, err := client.Do(googleReq)
-	if err != nil || googleRes.StatusCode != http.StatusOK {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
-		return
-	}
-	defer googleRes.Body.Close()
-
-	var userInfo models.GoogleUser
-	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
-		return
-	}
-
 	// Find User By Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
 	var user models.User
-	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}
@@ -269,32 +200,15 @@ func UpdateDailyCalorieGoal(c *gin.Context) {
 		return
 	}
 
-	// Verify Google Token
-	googleReq, err := http.NewRequest("GET", "https://www.googleapis.com/oauth2/v3/userinfo", nil)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create request"})
-		return
-	}
-	googleReq.Header.Set("Authorization", "Bearer "+req.TokenResponse.AccessToken)
-
-	// Fetch User Data
-	client := &http.Client{}
-	googleRes, err := client.Do(googleReq)
-	if err != nil || googleRes.StatusCode != http.StatusOK {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid or expired Google token"})
-		return
-	}
-	defer googleRes.Body.Close()
-
-	var userInfo models.GoogleUser
-	if err := json.NewDecoder(googleRes.Body).Decode(&userInfo); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse user info"})
-		return
-	}
-
 	// Find User By Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
 	var user models.User
-	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error; err != nil {
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
 		return
 	}

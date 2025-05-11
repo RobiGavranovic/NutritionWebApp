@@ -40,8 +40,6 @@ func main() {
 	authorized.PUT("/profile/updatePersonalInfo", controllers.UpdatePersonalInfo)
 	authorized.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
 	authorized.POST("getAllIngredients", controllers.GetAllIngredients)
-
-	//delete this after
 	authorized.POST("consume", controllers.Consume)
 
 	router.Run(":" + os.Getenv("PORT"))

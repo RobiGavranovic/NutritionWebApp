@@ -28,7 +28,7 @@ func RequireAuth(c *gin.Context) {
 		return
 	}
 
-	// Store Token
+	// Store User Info
 	c.Set("userID", claims.UserID)
 	c.Set("userEmail", claims.Email)
 
