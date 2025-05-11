@@ -38,7 +38,11 @@ func main() {
 	authorized.PUT("/profile/updateIntolerances", controllers.UpdateIntolarences)
 	authorized.PUT("/profile/updateUsername", controllers.UpdateUsername)
 	authorized.PUT("/profile/updatePersonalInfo", controllers.UpdatePersonalInfo)
-	router.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
+	authorized.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
+	authorized.POST("getAllIngredients", controllers.GetAllIngredients)
+
+	//delete this after
+	authorized.POST("consume", controllers.Consume)
 
 	router.Run(":" + os.Getenv("PORT"))
 }
