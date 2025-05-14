@@ -75,13 +75,12 @@ export default function ProfileClient() {
 
   const updateField = async (url, payloadKey, data, setState, onSuccess) => {
     setState("loading");
-    const tokenResponse = JSON.parse(localStorage.getItem("googleToken"));
     try {
       await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ tokenResponse, [payloadKey]: data }),
+        body: JSON.stringify({ [payloadKey]: data }),
       });
       setState("success");
       if (onSuccess) onSuccess();
@@ -95,13 +94,11 @@ export default function ProfileClient() {
   const updatePersonalInfo = async () => {
     setCalorieButtonState("loading");
     try {
-      const tokenResponse = JSON.parse(localStorage.getItem("googleToken"));
       var res = await fetch("http://localhost:3200/profile/updatePersonalInfo", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
         body: JSON.stringify({
-          tokenResponse,
           age: parseInt(age),
           height: parseInt(height),
           weight: parseInt(weight),
@@ -120,13 +117,11 @@ export default function ProfileClient() {
   const updateDailyCalorieGoal = async () => {
     setGoalButtonState("loading");
     try {
-      const tokenResponse = JSON.parse(localStorage.getItem("googleToken"));
       await fetch("http://localhost:3200/profile/updateDailyCalorieGoal", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
         body: JSON.stringify({
-          tokenResponse,
           dailyCalorieGoal: parseInt(dailyGoal),
           dailyGoalType: goalType,
         }),

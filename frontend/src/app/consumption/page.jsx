@@ -113,13 +113,13 @@ export default function ConsumptionPage() {
       {/* Page Content */}
       <div className="px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="flex justify-end">
+          <div className="flex justify-center lg:justify-end">
             <IngredientConsumption
               ingredientOptions={ingredients}
               onConsume={handleNewConsumption}
             />
           </div>
-          <div className="flex justify-start">
+          <div className="flex justify-center lg:justify-start">
             <TodaysConsumptionHistory items={todaysConsumption} />
           </div>
         </div>

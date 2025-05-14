@@ -138,26 +138,28 @@ export default function ConsumptionAnalitics() {
             </div>
           </div>
         </div>
-        
+
         {/* Consumption History Bar Chart */}
-        <div className="w-full h-[220px]">
-          <BarChart
-            xAxis={[
-              {
-                scaleType: "band",
-                data: (data.intakeHistory || []).map((entry) => entry.label),
-              },
-            ]}
-            series={[
-              {
-                data: (data.intakeHistory || []).map((entry) =>
-                  Math.round(entry.avgCalories)
-                ),
-                color: "#3b82f6",
-              },
-            ]}
-            height={220}
-          />
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-[500px]">
+            <BarChart
+              xAxis={[
+                {
+                  scaleType: "band",
+                  data: (data.intakeHistory || []).map((entry) => entry.label),
+                },
+              ]}
+              series={[
+                {
+                  data: (data.intakeHistory || []).map((entry) =>
+                    Math.round(entry.avgCalories)
+                  ),
+                  color: "#3b82f6",
+                },
+              ]}
+              height={220}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ function AllergenIntoleranceEditor({
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ tokenResponse, [payloadKey]: selectedItems }),
+        body: JSON.stringify({ [payloadKey]: selectedItems }),
       });
       setButtonState("success");
       setTimeout(() => setButtonState("idle"), 1500);
