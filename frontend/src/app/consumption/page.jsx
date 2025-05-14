@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import IngredientConsumption from "@/app/consumption/IngredientConsumption";
 import TodaysConsumptionHistory from "@/app/consumption/TodaysConsumptionHistory";
-import PieChartSuccessRate from "@/app/consumption/PieChartSuccessRate";
+import ConsumptionAnalitics from "@/app/consumption/ConsumptionAnalitics";
 
 export default function ConsumptionPage() {
   const [username, setUsername] = useState("");
@@ -122,9 +122,9 @@ export default function ConsumptionPage() {
           <div className="flex justify-start">
             <TodaysConsumptionHistory items={todaysConsumption} />
           </div>
-          <div>
-            <PieChartSuccessRate />
-          </div>
+        </div>
+        <div className="mt-6">
+          <ConsumptionAnalitics />
         </div>
       </div>
     </main>
