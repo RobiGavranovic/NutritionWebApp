@@ -178,10 +178,10 @@ func GetConsumptionStatistics(c *gin.Context) {
 		return
 	}
 
-	// Define Date Boundaries (Yesterday To (Yesterday - Range + 1))
+	// Define Date Boundaries (fromDate to end of yesterday)
 	today := time.Now().Truncate(24 * time.Hour)
-	yesterday := today.AddDate(0, 0, -1)
-	startDate := yesterday.AddDate(0, 0, -daysRange+1)
+	endDate := today.Add(-time.Nanosecond) // End of yesterday (23:59:59.999...)
+	startDate := today.AddDate(0, 0, -daysRange)
 
 	// Get User Info
 	var user models.User
@@ -193,7 +193,7 @@ func GetConsumptionStatistics(c *gin.Context) {
 	// Get All Consumption Entries In The Range
 	var consumptions []models.Consumption
 	if err := initializers.DB.
-		Where("user_id = ? AND created_at BETWEEN ? AND ?", userID, startDate, yesterday).
+		Where("user_id = ? AND created_at BETWEEN ? AND ?", userID, startDate, endDate).
 		Find(&consumptions).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch consumptions"})
 		return
@@ -243,19 +243,21 @@ func GetConsumptionStatistics(c *gin.Context) {
 		}
 	}
 
-	history := GetConsumptionIntakeHistory(daysRange, startDate, yesterday, consumptions)
+	history := GetConsumptionIntakeHistory(daysRange, startDate, endDate, consumptions)
 
 	c.JSON(http.StatusOK, gin.H{
 		"success":       success,
 		"fail":          fail,
 		"noInput":       noInput,
 		"fromDate":      startDate.Format("2006-01-02"),
-		"toDate":        yesterday.Format("2006-01-02"),
+		"toDate":        endDate.Format("2006-01-02"),
 		"intakeHistory": history,
 	})
 }
 
 func GetConsumptionIntakeHistory(daysRange int, startDate, endDate time.Time, consumptions []models.Consumption) []map[string]interface{} {
+	fmt.Println("CALCULATING!!!")
+
 	// Group Entries By Day
 	dailyBuckets := make(map[string][]float64)
 	for _, con := range consumptions {
@@ -284,10 +286,16 @@ func GetConsumptionIntakeHistory(daysRange int, startDate, endDate time.Time, co
 			currDate := startDate.AddDate(0, 0, i)
 			label := currDate.Format("Jan 2")
 			bucket := dailyBuckets[currDate.Format("2006-01-02")]
-			avg := average(bucket)
+
+			total := 0.0
+			for _, cal := range bucket {
+				fmt.Println("Calories:", cal)
+				total += cal
+			}
+
 			results = append(results, map[string]interface{}{
 				"label":       label,
-				"avgCalories": math.Round(avg),
+				"avgCalories": math.Round(total),
 			})
 		}
 
@@ -306,7 +314,13 @@ func GetConsumptionIntakeHistory(daysRange int, startDate, endDate time.Time, co
 			weekValues := []float64{}
 			for d := 0; !weekStart.After(weekEnd); d++ {
 				key := weekStart.Format("2006-01-02")
-				weekValues = append(weekValues, dailyBuckets[key]...)
+				if dayEntries, ok := dailyBuckets[key]; ok && len(dayEntries) > 0 {
+					dayTotal := 0.0
+					for _, val := range dayEntries {
+						dayTotal += val
+					}
+					weekValues = append(weekValues, dayTotal)
+				}
 				weekStart = weekStart.AddDate(0, 0, 1)
 			}
 
@@ -326,15 +340,30 @@ func GetConsumptionIntakeHistory(daysRange int, startDate, endDate time.Time, co
 		monthMap := make(map[string][]float64)
 		monthOrder := []string{}
 
-		for i := 0; i < daysRange; i++ {
-			currDate := startDate.AddDate(0, 0, i)
-			monthKey := currDate.Format("Jan 2006")
-			dateKey := currDate.Format("2006-01-02")
+		// Set the Start
+		curr := time.Date(startDate.Year(), startDate.Month(), 1, 0, 0, 0, 0, time.UTC)
 
+		for curr.Before(endDate) || curr.Equal(endDate) {
+			monthKey := curr.Format("Jan 2006")
 			if _, exists := monthMap[monthKey]; !exists {
 				monthOrder = append(monthOrder, monthKey)
 			}
-			monthMap[monthKey] = append(monthMap[monthKey], dailyBuckets[dateKey]...)
+
+			// Iterate Every Day of Month
+			daysInMonth := time.Date(curr.Year(), curr.Month()+1, 0, 0, 0, 0, 0, time.UTC).Day()
+			for d := 1; d <= daysInMonth; d++ {
+				dateKey := time.Date(curr.Year(), curr.Month(), d, 0, 0, 0, 0, time.UTC).Format("2006-01-02")
+				if entries, ok := dailyBuckets[dateKey]; ok && len(entries) > 0 {
+					dayTotal := 0.0
+					for _, val := range entries {
+						dayTotal += val
+					}
+					monthMap[monthKey] = append(monthMap[monthKey], dayTotal)
+				}
+			}
+
+			// Next Month
+			curr = curr.AddDate(0, 1, 0)
 		}
 
 		for _, month := range monthOrder {
