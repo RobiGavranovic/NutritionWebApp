@@ -3,11 +3,18 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import IngredientConsumption from "@/app/consumption/IngredientConsumption";
+import TodaysConsumptionHistory from "@/app/consumption/TodaysConsumptionHistory";
+import PieChartSuccessRate from "@/app/consumption/PieChartSuccessRate";
 
 export default function ConsumptionPage() {
   const [username, setUsername] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const router = useRouter();
+  const [todaysConsumption, setTodaysConsumption] = useState([]);
+
+  const handleNewConsumption = (newItem) => {
+    setTodaysConsumption((prev) => [...prev, newItem]);
+  };
 
   useEffect(() => {
     // Get User Data
@@ -35,10 +42,26 @@ export default function ConsumptionPage() {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (!Array.isArray(data)) {
+          return;
+        }
         const names = data.map((item) => item.name); // Map to string array
         setIngredients(names);
       })
       .catch((err) => console.error("Failed to load ingredients", err));
+
+    // Fetch Today's Consumption
+    fetch("http://localhost:3200/consumption/today", {
+      method: "POST",
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data.consumptions)) {
+          setTodaysConsumption(data.consumptions);
+        }
+      })
+      .catch((err) => console.error("Failed to load today's consumption", err));
   }, []);
 
   return (
@@ -57,12 +80,14 @@ export default function ConsumptionPage() {
             >
               RECIPES
             </button>
+
             <button
-              onClick={() => router.refresh()}
+              onClick={() => router.push("/profile")}
               className="hover:underline"
             >
               {username}
             </button>
+
             <button
               onClick={async () => {
                 await fetch("http://localhost:3200/logout", {
@@ -87,7 +112,20 @@ export default function ConsumptionPage() {
 
       {/* Page Content */}
       <div className="px-6 py-8">
-        <IngredientConsumption ingredientOptions={ingredients} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="flex justify-end">
+            <IngredientConsumption
+              ingredientOptions={ingredients}
+              onConsume={handleNewConsumption}
+            />
+          </div>
+          <div className="flex justify-start">
+            <TodaysConsumptionHistory items={todaysConsumption} />
+          </div>
+          <div>
+            <PieChartSuccessRate />
+          </div>
+        </div>
       </div>
     </main>
   );

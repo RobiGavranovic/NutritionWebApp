@@ -28,7 +28,7 @@ func GetProfileData(c *gin.Context) {
 		return
 	}
 
-	// Get DB Data
+		
 	var user models.User
 	if err := initializers.DB.First(&user, userID).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to load profile"})

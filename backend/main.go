@@ -25,22 +25,28 @@ func main() {
 		AllowCredentials: true,
 	}))
 
+	authorized := router.Group("/")
+	authorized.Use(controllers.RequireAuth)
+
 	router.GET("/getRandomMeals/:numOfMeals", controllers.GetNRandomMeals)
 	router.POST("/register", controllers.RegisterUser)
 	router.POST("/login", controllers.LoginUser)
 
-	authorized := router.Group("/")
-	authorized.Use(controllers.RequireAuth)
-
 	authorized.GET("/profile", controllers.GetProfileData)
 	authorized.POST("/logout", controllers.LogoutUser)
+
 	authorized.PUT("/profile/updateAllergens", controllers.UpdateAllergens)
 	authorized.PUT("/profile/updateIntolerances", controllers.UpdateIntolarences)
 	authorized.PUT("/profile/updateUsername", controllers.UpdateUsername)
 	authorized.PUT("/profile/updatePersonalInfo", controllers.UpdatePersonalInfo)
 	authorized.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
+
 	authorized.POST("getAllIngredients", controllers.GetAllIngredients)
-	authorized.POST("consume", controllers.Consume)
+	authorized.POST("/consumption/consume", controllers.Consume)
+	authorized.DELETE("consumption/consume/:id", controllers.DeleteConsumed)
+	authorized.POST("/consumption/today", controllers.GetTodaysConsumption)
+
+	authorized.GET("consumption/getConsumptionStatistics", controllers.GetConsumptionStatistics)
 
 	router.Run(":" + os.Getenv("PORT"))
 }

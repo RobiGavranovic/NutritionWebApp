@@ -4,7 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, Check, X } from "lucide-react";
 
-export default function IngredientConsumption({ ingredientOptions }) {
+export default function IngredientConsumption({
+  ingredientOptions,
+  onConsume,
+}) {
   const [searchText, setSearchText] = useState("");
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [selectedIngredient, setSelectedIngredient] = useState("");
@@ -46,12 +49,15 @@ export default function IngredientConsumption({ ingredientOptions }) {
     };
 
     try {
-      const response = await fetch("http://localhost:3200/consume", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "http://localhost:3200/consumption/consume",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(payload),
+        }
+      );
 
       const data = await response.json();
 
@@ -59,6 +65,14 @@ export default function IngredientConsumption({ ingredientOptions }) {
         setStatus("error");
         return;
       }
+
+      // Notify page.jsx
+      onConsume({
+        ID: data.id,
+        Ingredient: selectedIngredient,
+        Weight: parseFloat(weight),
+        Calories: data.caloriesConsumed,
+      });
 
       setConsumedCalories(data.caloriesConsumed);
       setStatus("success");
@@ -75,7 +89,7 @@ export default function IngredientConsumption({ ingredientOptions }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200 max-w-2xl mx-auto mt-6">
+    <div className="w-full max-w-2xl bg-white rounded-xl shadow-md p-6 border border-gray-200">
       <div className="mb-4 relative">
         <input
           type="text"
