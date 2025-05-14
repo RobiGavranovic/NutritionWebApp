@@ -23,14 +23,12 @@ export default function TodaysConsumptionHistory({ items }) {
       );
 
       if (!res.ok) {
-        console.error("Failed to delete item with ID:", id);
         return;
       }
 
       // Remove the item from state on success
       setConsumedItems((prev) => prev.filter((item) => item.ID !== id));
     } catch (err) {
-      console.error("Error deleting item:", err);
     }
   };
 

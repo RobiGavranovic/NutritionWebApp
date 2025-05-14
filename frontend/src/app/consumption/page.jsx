@@ -61,7 +61,7 @@ export default function ConsumptionPage() {
           setTodaysConsumption(data.consumptions);
         }
       })
-      .catch((err) => console.error("Failed to load today's consumption", err));
+      .catch((err));
   }, []);
 
   return (

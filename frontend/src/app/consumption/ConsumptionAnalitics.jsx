@@ -33,7 +33,6 @@ export default function ConsumptionAnalitics() {
         }
       })
       .catch((err) => {
-        console.error("Failed to fetch analytics data", err);
       });
   };
 

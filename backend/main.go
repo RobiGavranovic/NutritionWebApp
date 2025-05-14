@@ -31,6 +31,8 @@ func main() {
 	router.GET("/getRandomMeals/:numOfMeals", controllers.GetNRandomMeals)
 	router.POST("/register", controllers.RegisterUser)
 	router.POST("/login", controllers.LoginUser)
+	router.GET("recipes/search/origin/:origin", controllers.SearchRecipesByOrigin)
+	router.GET("recipes/search/name/:name", controllers.SearchRecipesByName)
 
 	authorized.GET("/profile", controllers.GetProfileData)
 	authorized.POST("/logout", controllers.LogoutUser)
@@ -45,7 +47,6 @@ func main() {
 	authorized.POST("/consumption/consume", controllers.Consume)
 	authorized.DELETE("consumption/consume/:id", controllers.DeleteConsumed)
 	authorized.POST("/consumption/today", controllers.GetTodaysConsumption)
-
 	authorized.GET("consumption/getConsumptionStatistics", controllers.GetConsumptionStatistics)
 
 	router.Run(":" + os.Getenv("PORT"))
