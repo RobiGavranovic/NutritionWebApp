@@ -42,6 +42,7 @@ func main() {
 	authorized.PUT("/profile/updateUsername", controllers.UpdateUsername)
 	authorized.PUT("/profile/updatePersonalInfo", controllers.UpdatePersonalInfo)
 	authorized.PUT("/profile/updateDailyCalorieGoal", controllers.UpdateDailyCalorieGoal)
+	authorized.DELETE("/profile/delete", controllers.DeleteUser)
 
 	authorized.POST("getAllIngredients", controllers.GetAllIngredients)
 	authorized.POST("/consumption/consume", controllers.Consume)

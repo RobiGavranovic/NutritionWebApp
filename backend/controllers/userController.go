@@ -80,3 +80,36 @@ func RegisterUser(c *gin.Context) {
 		"userInfo": userInfo,
 	})
 }
+
+func DeleteUser(c *gin.Context) {
+	// Get User Email
+	email, exists := c.Get("userEmail")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing user context"})
+		return
+	}
+
+	// Find User By Email
+	var user models.User
+	if err := initializers.DB.Where("email = ?", email).First(&user).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+
+	// Delete User Consumptions
+	if err := initializers.DB.Where("user_id = ?", user.ID).Delete(&models.Consumption{}).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete user's consumption data"})
+		return
+	}
+
+	// Delete User Account
+	if err := initializers.DB.Delete(&user).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete user account"})
+		return
+	}
+
+	// Clear JWT Token Cookie
+	c.SetCookie("Authorization", "", -1, "/", "localhost", false, true)
+
+	c.JSON(http.StatusOK, gin.H{"message": "User account and data deleted successfully"})
+}

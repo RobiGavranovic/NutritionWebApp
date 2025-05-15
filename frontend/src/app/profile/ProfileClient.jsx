@@ -60,6 +60,9 @@ export default function ProfileClient() {
   const [goalType, setGoalType] = useState("");
   const [goalButtonState, setGoalButtonState] = useState("idle");
 
+  // Delete Button
+  const [deleteState, setDeleteState] = useState("idle");
+
   const router = useRouter();
 
   useEffect(() => {
@@ -232,6 +235,64 @@ export default function ProfileClient() {
             buttonState={goalButtonState}
             onSetGoal={updateDailyCalorieGoal}
           />
+
+          <div className="flex flex-col items-center mt-10 space-y-3">
+            {deleteState === "confirm" && (
+              <p className="text-sm text-red-600 font-medium text-center">
+                Pressing this button again will permanently delete your profile
+                and all associated data.
+              </p>
+            )}
+
+            <button
+              onClick={async () => {
+                if (deleteState === "idle") {
+                  setDeleteState("confirm");
+                } else if (deleteState === "confirm") {
+                  setDeleteState("loading");
+                  try {
+                    const res = await fetch(
+                      "http://localhost:3200/profile/delete",
+                      {
+                        method: "DELETE",
+                        credentials: "include",
+                      }
+                    );
+                    if (res.ok) {
+                      setDeleteState("deleted");
+                      setTimeout(() => {
+                        router.push("/register");
+                      }, 1500);
+                    } else {
+                      setDeleteState("error");
+                      setTimeout(() => setDeleteState("idle"), 2000);
+                    }
+                  } catch {
+                    setDeleteState("error");
+                    setTimeout(() => setDeleteState("idle"), 2000);
+                  }
+                }
+              }}
+              disabled={deleteState === "loading" || deleteState === "deleted"}
+              className={`text-white px-6 py-3 rounded-md shadow font-semibold transition-all duration-200
+                          ${
+                            deleteState === "idle"
+                              ? "bg-red-500 hover:bg-red-600"
+                              : deleteState === "confirm"
+                              ? "bg-yellow-500 hover:bg-yellow-600"
+                              : deleteState === "deleted"
+                              ? "bg-green-500"
+                              : "bg-gray-400"
+                          }
+                        `}
+            >
+              {deleteState === "idle" && "DELETE PROFILE"}
+              {deleteState === "confirm" && "YES, DELETE"}
+              {deleteState === "loading" && "Deleting..."}
+              {deleteState === "deleted" && "Deleted"}
+              {deleteState === "error" && "Failed. Try again"}
+            </button>
+          </div>
         </div>
       </div>
     </main>
