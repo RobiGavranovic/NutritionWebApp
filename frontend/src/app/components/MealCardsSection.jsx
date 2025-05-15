@@ -4,7 +4,11 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MealCard from "./MealCard";
 
-export default function MealCardsSection({ searchResults }) {
+export default function MealCardsSection({
+  searchResults,
+  userAllergens = [],
+  userIntolerances = [],
+}) {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -69,11 +73,15 @@ export default function MealCardsSection({ searchResults }) {
     [loading, meals]
   );
 
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   return (
     <div className="relative">
       <div className="flex flex-wrap justify-center gap-8 mt-8">
         {meals.map((meal, index) => {
-          const key = meal.IDMeal || `${meal.StrMeal}-${index}`; // fallback key
+          const key = meal.IDMeal + parseInt(toString(getRandomInt())) || `${meal.StrMeal}-${index}`;
           return (
             <motion.div
               key={key}
@@ -81,7 +89,11 @@ export default function MealCardsSection({ searchResults }) {
               onClick={() => setSelectedMeal(meal)}
               ref={index === meals.length - 1 ? lastMealRef : null}
             >
-              <MealCard meal={meal} />
+              <MealCard
+                meal={meal}
+                userAllergens={userAllergens}
+                userIntolerances={userIntolerances}
+              />
             </motion.div>
           );
         })}

@@ -42,7 +42,6 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
     "Alcohol",
     "Sulphites",
     "Salicylates",
-    "Monosodium glutamate",
   ];
 
   const [addedAllergens, setAddedAllergens] = useState([]);

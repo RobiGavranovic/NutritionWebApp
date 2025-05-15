@@ -52,4 +52,6 @@ type Meal struct {
 	StrMeasure18    string
 	StrMeasure19    string
 	StrMeasure20    string
+	Allergens       []string
+	Intolerances    []string
 }

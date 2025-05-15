@@ -4,7 +4,32 @@ import CardMedia from "@mui/material/CardMedia";
 import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
 
-export default function MealCard({ meal }) {
+export default function MealCard({
+  meal,
+  userAllergens = [],
+  userIntolerances = [],
+}) {
+
+  const isUserAlergicTo = (meal.Allergens || []).some((item) =>
+    userAllergens.includes(item)
+  );
+  const isUserIntolerantTo = (meal.Intolerances || []).some((item) =>
+    userIntolerances.includes(item)
+  );
+
+  // Default BG Color
+  let bgColor = "#fff";
+
+  // If Intolerant - Yellow
+  if (isUserIntolerantTo) {
+    bgColor = "#fff3cd";
+  }
+
+  // If Alergic - Red
+  if (isUserAlergicTo) {
+    bgColor = "#f8d7da";
+  }
+
   return (
     <Card
       key={meal.IDMeal}
@@ -13,6 +38,12 @@ export default function MealCard({ meal }) {
         height: { md: 444 },
         display: "flex",
         flexDirection: "column",
+        backgroundColor: bgColor,
+        border: isUserAlergicTo
+          ? "2px solid #dc3545"
+          : isUserIntolerantTo
+          ? "2px solid #ffc107"
+          : "1px solid #ccc",
       }}
     >
       <CardActionArea
