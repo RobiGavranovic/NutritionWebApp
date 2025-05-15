@@ -6,6 +6,7 @@ import UsernameEditor from "@/app/profile/UsernameEditor";
 import AllergenIntoleranceEditor from "@/app/profile/AllergenIntolarenceEditor";
 import CalorieCalculator from "@/app/profile/CalorieCalculator";
 import DailyCalorieGoal from "@/app/profile/DailyCalorieGoal";
+import TopBar from "@/app/components/TopBar";
 
 // #TODO all options
 const allergenOptions = [
@@ -94,16 +95,19 @@ export default function ProfileClient() {
   const updatePersonalInfo = async () => {
     setCalorieButtonState("loading");
     try {
-      var res = await fetch("http://localhost:3200/profile/updatePersonalInfo", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          age: parseInt(age),
-          height: parseInt(height),
-          weight: parseInt(weight),
-        }),
-      });
+      var res = await fetch(
+        "http://localhost:3200/profile/updatePersonalInfo",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            age: parseInt(age),
+            height: parseInt(height),
+            weight: parseInt(weight),
+          }),
+        }
+      );
       const data = await res.json();
       setCalories(data.dailyCalorieGoal);
       setCalorieButtonState("success");
@@ -138,54 +142,10 @@ export default function ProfileClient() {
 
   return (
     <main className="min-h-screen bg-gray-100 text-gray-900">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full border-primary border-t border-b">
-        <div className="flex flex-col justify-center p-5 lg:p-16 border-r border-primary">
-          <div className="flex items-center justify-center w-full">
-            <h1 className="text-5xl font-bold text-center">YourCompany</h1>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-start lg:pt-8">
-          <nav className="text-2xl flex justify-around items-center border-b border-primary pb-4 font-medium px-4">
-            <button
-              onClick={() => router.push("/recipes")}
-              className="hover:underline"
-            >
-              RECIPES
-            </button>
-            <button
-              onClick={() => router.push("/consumption")}
-              className="hover:underline"
-            >
-              CONSUMPTION
-            </button>
-            <button
-              onClick={() => router.refresh()}
-              className="hover:underline"
-            >
-              {username}
-            </button>
-            <button
-              onClick={async () => {
-                await fetch("http://localhost:3200/logout", {
-                  method: "POST",
-                  credentials: "include",
-                });
-                router.push("/login");
-              }}
-              className="hover:underline"
-            >
-              LOGOUT
-            </button>
-          </nav>
-
-          <div className="mt-6 mb-6 pb-0">
-            <h2 className="text-2xl font-light px-8 text-center">
-              Welcome, {username}!
-            </h2>
-          </div>
-        </div>
-      </div>
+      <TopBar
+        navbarOptions={["RECIPES", "CONSUMPTION", "PROFILE", "LOGOUT"]}
+        subtitle={"Welcome, " + username + "!"}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full border-primary border-t border-b">
         <div className="space-y-6 mt-6 ml-3 mr-3">
