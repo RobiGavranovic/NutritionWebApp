@@ -25,6 +25,7 @@ async function onFinishedUserSetUp(
 
   const res = await fetch("http://localhost:3200/register", {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       tokenResponse: profileData.tokenResponse,
@@ -36,6 +37,7 @@ async function onFinishedUserSetUp(
   });
 
   if (res.ok) {
+    window.location.href = "/profile";
   } else {
     const errorData = await res.json();
     // Instruction : Go Login

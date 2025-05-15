@@ -56,7 +56,7 @@ func RegisterUser(c *gin.Context) {
 		Intolerances: incomingData.Intolerances,
 	}
 
-	// Check If User Already Exists
+	// Check If User With Email Already Exists
 	var existingUser models.User
 	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&existingUser).Error; err == nil {
 		// User found
@@ -66,12 +66,40 @@ func RegisterUser(c *gin.Context) {
 		return
 	}
 
+	// Check if User With Username Already Exists
+	var existingByUsername models.User
+	if err := initializers.DB.Where("username = ?", incomingData.Username).First(&existingByUsername).Error; err == nil {
+		c.JSON(http.StatusConflict, gin.H{"error": "Username already taken, please choose another"})
+		return
+	}
+
 	// Create User In DB
 	result := initializers.DB.Create(&user)
 	if result.Error != nil {
 		c.Status(400)
 		return
 	}
+
+	// Find User In DB - We Need ID
+	var newUser models.User
+	if err := initializers.DB.Where("email = ?", userInfo.Email).First(&newUser).Error; err != nil {
+		// User Not Found
+		c.JSON(http.StatusConflict, gin.H{
+			"error": "Failed to create a user, please try again",
+		})
+		return
+	}
+
+	// Create JWT Token
+	token, err := GenerateJWT(newUser.ID, newUser.Email)
+	if err != nil || token == "" {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to provide session"})
+		return
+	}
+
+	// Use This In Prod, We Need HTTP For LocalHost Testing, So Secure = false
+	//c.SetCookie("session_token", token, 3600*2, "/", "", true, true)
+	c.SetCookie("session_token", token, 3600*2, "/", "localhost", false, true)
 
 	// Return It
 	c.JSON(http.StatusOK, gin.H{
@@ -103,7 +131,7 @@ func DeleteUser(c *gin.Context) {
 	}
 
 	// Delete User Account
-	if err := initializers.DB.Delete(&user).Error; err != nil {
+	if err := initializers.DB.Unscoped().Delete(&user).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete user account"})
 		return
 	}
