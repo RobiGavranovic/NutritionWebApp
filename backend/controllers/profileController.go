@@ -28,7 +28,6 @@ func GetProfileData(c *gin.Context) {
 		return
 	}
 
-		
 	var user models.User
 	if err := initializers.DB.First(&user, userID).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to load profile"})
@@ -180,13 +179,15 @@ func UpdatePersonalInfo(c *gin.Context) {
 }
 
 func CalculateDailyCalories(age int, height int, weight int, gender string) (dailyCalories float64) {
+	if age == 0 || height == 0 || (gender != "male" && gender != "female") {
+		return 0
+	}
+
 	// Daily Calories Based On Gender
 	if gender == "male" {
 		dailyCalories = 10*float64(weight) + 6.25*float64(height) - 5*float64(age) + 5
 	} else if gender == "female" {
 		dailyCalories = 10*float64(weight) + 6.25*float64(height) - 5*float64(age) - 161
-	} else {
-		dailyCalories = 0 // Unknown Gender
 	}
 
 	return dailyCalories

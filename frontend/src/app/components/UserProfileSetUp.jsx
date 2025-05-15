@@ -1,7 +1,7 @@
 "use client";
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, m } from "framer-motion";
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X, Plus } from "lucide-react";
 
@@ -16,26 +16,35 @@ export default function UserProfileSetup({ googleTokenResponse, onFinish }) {
   const [errorUsername, setErrorUsername] = useState(false);
 
   const currentTab = steps[currentIndex];
+
   const allergenOptions = [
-    "Peanuts",
-    "Tree Nuts",
-    "Dairy",
+    "Celery",
+    "Gluten",
+    "Crustaceans",
     "Eggs",
     "Fish",
-    "Shellfish",
-    "Soy",
-    "Wheat",
-    "Gluten",
-    "Sesame",
+    "Lupin",
+    "Milk",
+    "Molluscs",
+    "Mustard",
+    "Nuts",
+    "Peanuts",
+    "Sesame seeds",
+    "Soya",
+    "Sulphur dioxide",
   ];
+
   const intoleranceOptions = [
     "Lactose",
     "Gluten",
-    "Fructose",
     "Histamine",
-    "Sorbitol",
+    "Caffeine",
+    "Alcohol",
+    "Sulphites",
     "Salicylates",
+    "Monosodium glutamate",
   ];
+
   const [addedAllergens, setAddedAllergens] = useState([]);
   const [addedIntolerances, setAddedIntolerances] = useState([]);
   const [isExiting, setIsExiting] = useState(false);

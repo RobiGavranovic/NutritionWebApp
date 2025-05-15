@@ -8,20 +8,33 @@ import CalorieCalculator from "@/app/profile/CalorieCalculator";
 import DailyCalorieGoal from "@/app/profile/DailyCalorieGoal";
 import TopBar from "@/app/components/TopBar";
 
-// #TODO all options
 const allergenOptions = [
-  "Dairy",
-  "Peanuts",
-  "Tree nuts",
-  "Soy",
+  "Celery",
+  "Gluten",
+  "Crustaceans",
   "Eggs",
-  "Wheat",
   "Fish",
-  "Shellfish",
+  "Lupin",
+  "Milk",
+  "Molluscs",
+  "Mustard",
+  "Nuts",
+  "Peanuts",
+  "Sesame seeds",
+  "Soya",
+  "Sulphur dioxide",
 ];
 
-// #TODO all options
-const intoleranceOptions = ["Dairy"];
+const intoleranceOptions = [
+  "Lactose",
+  "Gluten",
+  "Histamine",
+  "Caffeine",
+  "Alcohol",
+  "Sulphites",
+  "Salicylates",
+  "Monosodium glutamate",
+];
 
 export default function ProfileClient() {
   const [loading, setLoading] = useState(true);
@@ -67,6 +80,7 @@ export default function ProfileClient() {
         setAge(data.Age || "");
         setHeight(data.Height || "");
         setWeight(data.Weight || "");
+        setDailyGoal(data.DailyCalorieGoal || "");
       })
       .catch(() => {
         router.push("/login");
@@ -93,6 +107,11 @@ export default function ProfileClient() {
   };
 
   const updatePersonalInfo = async () => {
+    if (!age || parseInt(age) <= 0 || !height || parseInt(height) <= 0) {
+      alert("Please enter valid age and height values before calculating.");
+      return;
+    }
+
     setCalorieButtonState("loading");
     try {
       var res = await fetch(

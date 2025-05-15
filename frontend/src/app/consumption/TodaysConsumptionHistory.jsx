@@ -78,7 +78,7 @@ export default function TodaysConsumptionHistory({ items }) {
         >
           <div>{item.Ingredient}</div>
           <div>{item.Weight}</div>
-          <div>{Math.round(parseInt(item.Calories))}</div>
+          <div>{Math.round(parseFloat(item.Calories))}</div>
           <div>
             <button
               className="text-red-500 hover:text-red-700"
