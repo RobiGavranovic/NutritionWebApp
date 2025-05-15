@@ -17,6 +17,10 @@ export default function ConsumptionPage() {
     setTodaysConsumption((prev) => [...prev, newItem]);
   };
 
+  const handleDeleteConsumption = (id) => {
+    setTodaysConsumption((prev) => prev.filter((item) => item.ID !== id));
+  };
+
   useEffect(() => {
     // Get User Data
     fetch("http://localhost:3200/profile", {
@@ -61,7 +65,7 @@ export default function ConsumptionPage() {
         if (Array.isArray(data.consumptions)) {
           setTodaysConsumption(data.consumptions);
         }
-      })
+      });
   }, []);
 
   return (
@@ -82,7 +86,10 @@ export default function ConsumptionPage() {
             />
           </div>
           <div className="flex justify-center lg:justify-start">
-            <TodaysConsumptionHistory items={todaysConsumption} />
+            <TodaysConsumptionHistory
+              items={todaysConsumption}
+              onDelete={handleDeleteConsumption}
+            />
           </div>
         </div>
         <div className="mt-6">

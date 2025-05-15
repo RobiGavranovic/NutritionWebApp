@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-export default function TodaysConsumptionHistory({ items }) {
+export default function TodaysConsumptionHistory({ items, onDelete }) {
   const [consumedItems, setConsumedItems] = useState(items);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function TodaysConsumptionHistory({ items }) {
 
       // Remove the item from state on success
       setConsumedItems((prev) => prev.filter((item) => item.ID !== id));
+      onDelete(id);
     } catch (err) {
     }
   };
