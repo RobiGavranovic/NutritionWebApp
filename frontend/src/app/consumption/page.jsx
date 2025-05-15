@@ -30,7 +30,7 @@ export default function ConsumptionPage() {
         const data = await res.json();
         setUsername(data.Username);
       })
-      .catch(() => router.push("/login"));
+      .catch((err) => router.push("/login"));
 
     // Get All Ingredients
     const tokenResponse = JSON.parse(localStorage.getItem("googleToken"));
@@ -61,7 +61,6 @@ export default function ConsumptionPage() {
           setTodaysConsumption(data.consumptions);
         }
       })
-      .catch((err));
   }, []);
 
   return (

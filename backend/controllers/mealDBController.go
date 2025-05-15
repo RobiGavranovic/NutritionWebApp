@@ -56,21 +56,24 @@ func GetNRandomMeals(c *gin.Context) {
 	seen := make(map[string]bool)
 
 	// Fetch meals
-	for len(meals.Meals) < numOfMeals {
+	maxRetries := 10
+
+	for len(meals.Meals) < numOfMeals && maxRetries > 0 {
 		mealWrapper, err := GetRandomMeal()
-		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get random meal from MealDB"})
-			return
+		if err != nil || len(mealWrapper.Meals) == 0 {
+			maxRetries--
+			continue
 		}
 
-		meal := mealWrapper.Meals[0] //extract meal from meals wrapper
-
+		meal := mealWrapper.Meals[0]
 		id := meal.IDMeal
 
-		// Check for duplicates
 		if !seen[id] {
 			meals.Meals = append(meals.Meals, meal)
 			seen[id] = true
+		} else {
+			// Duplicate Found
+			maxRetries--
 		}
 	}
 
@@ -148,13 +151,13 @@ func SearchRecipesByOrigin(c *gin.Context) {
 func SearchRecipesByName(c *gin.Context) {
 	// Get Name From URL
 	name := c.Param("name")
-	if origin == "" {
+	if name == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Name parameter is required"})
 		return
 	}
 
 	// Search All Meals With Origin
-	apiURL := fmt.Sprintf("https://www.themealdb.com/api/json/v1/1/filter.php?s=%s", name)
+	apiURL := fmt.Sprintf("https://www.themealdb.com/api/json/v1/1/search.php?s=%s", name)
 
 	resp, err := http.Get(apiURL)
 	if err != nil {
@@ -199,7 +202,7 @@ func SearchRecipesByName(c *gin.Context) {
 			meal := detailData.Meals[0]
 			normalized := make(map[string]interface{})
 			for k, v := range meal {
-				// Capitalize first letter
+				// Capitalize First Letter
 				if len(k) > 0 {
 					normalizedKey := strings.ToUpper(string(k[0])) + k[1:]
 					normalized[normalizedKey] = v
