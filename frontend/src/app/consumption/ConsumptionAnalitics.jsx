@@ -32,8 +32,7 @@ export default function ConsumptionAnalitics() {
           });
         }
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -79,7 +78,10 @@ export default function ConsumptionAnalitics() {
       {/* Two-column layout */}
       <div className="flex flex-col lg:flex-row justify-center items-stretch gap-10 w-full mt-4">
         {/* Left: Pie Chart + Legend */}
-        <div className="w-full flex flex-col items-center gap-4">
+        <div className="m-0 w-full flex flex-col items-center gap-4">
+          <h2 className="text-l font-semibold text-gray-800 text-center">
+            Consumption Goal Success Rate
+          </h2>
           <PieChart
             series={[
               {
@@ -139,7 +141,10 @@ export default function ConsumptionAnalitics() {
         </div>
 
         {/* Consumption History Bar Chart */}
-        <div className="w-full flex justify-center">
+        <div className="m-0 w-full flex flex-col items-center gap-4">
+          <h2 className="text-l font-semibold text-gray-800 text-center">
+            Consumption Calorie History
+          </h2>
           <div className="w-full max-w-[500px]">
             <BarChart
               xAxis={[
