@@ -1,0 +1,2877 @@
+[
+  {
+    "idIngredient": "1",
+    "strIngredient": "Chicken",
+    "calories100g": 239
+  },
+  {
+    "idIngredient": "2",
+    "strIngredient": "Salmon",
+    "calories100g": 208
+  },
+  {
+    "idIngredient": "3",
+    "strIngredient": "Beef",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "4",
+    "strIngredient": "Pork",
+    "calories100g": 242
+  },
+  {
+    "idIngredient": "5",
+    "strIngredient": "Avocado",
+    "calories100g": 160
+  },
+  {
+    "idIngredient": "9",
+    "strIngredient": "Apple Cider Vinegar",
+    "calories100g": 21
+  },
+  {
+    "idIngredient": "10",
+    "strIngredient": "Asparagus",
+    "calories100g": 20
+  },
+  {
+    "idIngredient": "11",
+    "strIngredient": "Aubergine",
+    "calories100g": 24
+  },
+  {
+    "idIngredient": "13",
+    "strIngredient": "Baby Plum Tomatoes",
+    "calories100g": 20
+  },
+  {
+    "idIngredient": "14",
+    "strIngredient": "Bacon",
+    "calories100g": 548
+  },
+  {
+    "idIngredient": "15",
+    "strIngredient": "Baking Powder",
+    "calories100g": 107
+  },
+  {
+    "idIngredient": "16",
+    "strIngredient": "Balsamic Vinegar",
+    "calories100g": 93
+  },
+  {
+    "idIngredient": "17",
+    "strIngredient": "Basil",
+    "calories100g": 27
+  },
+  {
+    "idIngredient": "18",
+    "strIngredient": "Basil Leaves",
+    "calories100g": 27
+  },
+  {
+    "idIngredient": "19",
+    "strIngredient": "Basmati Rice",
+    "calories100g": 354
+  },
+  {
+    "idIngredient": "20",
+    "strIngredient": "Bay Leaf",
+    "calories100g": 313
+  },
+  {
+    "idIngredient": "21",
+    "strIngredient": "Bay Leaves",
+    "calories100g": 313
+  },
+  {
+    "idIngredient": "23",
+    "strIngredient": "Beef Brisket",
+    "calories100g": 342
+  },
+  {
+    "idIngredient": "24",
+    "strIngredient": "Beef Fillet",
+    "calories100g": 140
+  },
+  {
+    "idIngredient": "25",
+    "strIngredient": "Beef Gravy",
+    "calories100g": 42
+  },
+  {
+    "idIngredient": "26",
+    "strIngredient": "Beef Stock",
+    "calories100g": 3
+  },
+  {
+    "idIngredient": "27",
+    "strIngredient": "Bicarbonate Of Soda",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "28",
+    "strIngredient": "Biryani Masala",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "29",
+    "strIngredient": "Black Pepper",
+    "calories100g": 255
+  },
+  {
+    "idIngredient": "30",
+    "strIngredient": "Black Treacle",
+    "calories100g": 290
+  },
+  {
+    "idIngredient": "31",
+    "strIngredient": "Borlotti Beans",
+    "calories100g": 83
+  },
+  {
+    "idIngredient": "32",
+    "strIngredient": "Bowtie Pasta",
+    "calories100g": 169
+  },
+  {
+    "idIngredient": "33",
+    "strIngredient": "Bramley Apples",
+    "calories100g": 41
+  },
+  {
+    "idIngredient": "34",
+    "strIngredient": "Brandy",
+    "calories100g": 231
+  },
+  {
+    "idIngredient": "35",
+    "strIngredient": "Bread",
+    "calories100g": 266
+  },
+  {
+    "idIngredient": "36",
+    "strIngredient": "Breadcrumbs",
+    "calories100g": 395
+  },
+  {
+    "idIngredient": "37",
+    "strIngredient": "Broccoli",
+    "calories100g": 34
+  },
+  {
+    "idIngredient": "38",
+    "strIngredient": "Brown Lentils",
+    "calories100g": 350
+  },
+  {
+    "idIngredient": "39",
+    "strIngredient": "Brown Rice",
+    "calories100g": 110
+  },
+  {
+    "idIngredient": "40",
+    "strIngredient": "Brown Sugar",
+    "calories100g": 377
+  },
+  {
+    "idIngredient": "41",
+    "strIngredient": "Butter",
+    "calories100g": 717
+  },
+  {
+    "idIngredient": "43",
+    "strIngredient": "Cacao",
+    "calories100g": 229
+  },
+  {
+    "idIngredient": "44",
+    "strIngredient": "Cajun",
+    "calories100g": 276
+  },
+  {
+    "idIngredient": "45",
+    "strIngredient": "Canned Tomatoes",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "46",
+    "strIngredient": "Cannellini Beans",
+    "calories100g": 277
+  },
+  {
+    "idIngredient": "47",
+    "strIngredient": "Cardamom",
+    "calories100g": 311
+  },
+  {
+    "idIngredient": "49",
+    "strIngredient": "Carrots",
+    "calories100g": 41
+  },
+  {
+    "idIngredient": "50",
+    "strIngredient": "Cashew Nuts",
+    "calories100g": 553
+  },
+  {
+    "idIngredient": "51",
+    "strIngredient": "Cashews",
+    "calories100g": 553
+  },
+  {
+    "idIngredient": "52",
+    "strIngredient": "Caster Sugar",
+    "calories100g": 400
+  },
+  {
+    "idIngredient": "53",
+    "strIngredient": "Cayenne Pepper",
+    "calories100g": 318
+  },
+  {
+    "idIngredient": "54",
+    "strIngredient": "Celeriac",
+    "calories100g": 42
+  },
+  {
+    "idIngredient": "55",
+    "strIngredient": "Celery",
+    "calories100g": 14
+  },
+  {
+    "idIngredient": "56",
+    "strIngredient": "Celery Salt",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "57",
+    "strIngredient": "Challots",
+    "calories100g": 72
+  },
+  {
+    "idIngredient": "58",
+    "strIngredient": "Charlotte Potatoes",
+    "calories100g": 71
+  },
+  {
+    "idIngredient": "59",
+    "strIngredient": "Cheddar Cheese",
+    "calories100g": 404
+  },
+  {
+    "idIngredient": "60",
+    "strIngredient": "Cheese",
+    "calories100g": 404
+  },
+  {
+    "idIngredient": "61",
+    "strIngredient": "Cheese Curds",
+    "calories100g": 393
+  },
+  {
+    "idIngredient": "62",
+    "strIngredient": "Cherry Tomatoes",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "63",
+    "strIngredient": "Chestnut Mushroom",
+    "calories100g": 8
+  },
+  {
+    "idIngredient": "65",
+    "strIngredient": "Chicken Breast",
+    "calories100g": 165
+  },
+  {
+    "idIngredient": "66",
+    "strIngredient": "Chicken Breasts",
+    "calories100g": 165
+  },
+  {
+    "idIngredient": "67",
+    "strIngredient": "Chicken Legs",
+    "calories100g": 230
+  },
+  {
+    "idIngredient": "68",
+    "strIngredient": "Chicken Stock",
+    "calories100g": 5
+  },
+  {
+    "idIngredient": "70",
+    "strIngredient": "Chicken Thighs",
+    "calories100g": 209
+  },
+  {
+    "idIngredient": "71",
+    "strIngredient": "Chickpeas",
+    "calories100g": 164
+  },
+  {
+    "idIngredient": "72",
+    "strIngredient": "Chili Powder",
+    "calories100g": 282
+  },
+  {
+    "idIngredient": "73",
+    "strIngredient": "Chilled Butter",
+    "calories100g": 717
+  },
+  {
+    "idIngredient": "74",
+    "strIngredient": "Chilli",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "75",
+    "strIngredient": "Chilli Powder",
+    "calories100g": 282
+  },
+  {
+    "idIngredient": "76",
+    "strIngredient": "Chinese Broccoli",
+    "calories100g": 30
+  },
+  {
+    "idIngredient": "77",
+    "strIngredient": "Chocolate Chips",
+    "calories100g": 546
+  },
+  {
+    "idIngredient": "78",
+    "strIngredient": "Chopped Onion",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "79",
+    "strIngredient": "Chopped Parsley",
+    "calories100g": 36
+  },
+  {
+    "idIngredient": "80",
+    "strIngredient": "Chopped Tomatoes",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "81",
+    "strIngredient": "Chorizo",
+    "calories100g": 455
+  },
+  {
+    "idIngredient": "82",
+    "strIngredient": "Christmas Pudding",
+    "calories100g": 320
+  },
+  {
+    "idIngredient": "83",
+    "strIngredient": "Cilantro",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "84",
+    "strIngredient": "Cinnamon",
+    "calories100g": 247
+  },
+  {
+    "idIngredient": "85",
+    "strIngredient": "Cinnamon Stick",
+    "calories100g": 247
+  },
+  {
+    "idIngredient": "87",
+    "strIngredient": "Cloves",
+    "calories100g": 274
+  },
+  {
+    "idIngredient": "88",
+    "strIngredient": "Coco Sugar",
+    "calories100g": 375
+  },
+  {
+    "idIngredient": "89",
+    "strIngredient": "Cocoa",
+    "calories100g": 228
+  },
+  {
+    "idIngredient": "90",
+    "strIngredient": "Coconut Cream",
+    "calories100g": 330
+  },
+  {
+    "idIngredient": "91",
+    "strIngredient": "Coconut Milk",
+    "calories100g": 192
+  },
+  {
+    "idIngredient": "92",
+    "strIngredient": "Colby Jack Cheese",
+    "calories100g": 384
+  },
+  {
+    "idIngredient": "93",
+    "strIngredient": "Cold Water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "94",
+    "strIngredient": "Condensed Milk",
+    "calories100g": 321
+  },
+  {
+    "idIngredient": "95",
+    "strIngredient": "Coriander",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "96",
+    "strIngredient": "Coriander Leaves",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "97",
+    "strIngredient": "Coriander Seeds",
+    "calories100g": 298
+  },
+  {
+    "idIngredient": "98",
+    "strIngredient": "Corn Tortillas",
+    "calories100g": 218
+  },
+  {
+    "idIngredient": "99",
+    "strIngredient": "Cornstarch",
+    "calories100g": 381
+  },
+  {
+    "idIngredient": "100",
+    "strIngredient": "Cream",
+    "calories100g": 193
+  },
+  {
+    "idIngredient": "101",
+    "strIngredient": "Creme Fraiche",
+    "calories100g": 393
+  },
+  {
+    "idIngredient": "102",
+    "strIngredient": "Cubed Feta Cheese",
+    "calories100g": 225
+  },
+  {
+    "idIngredient": "103",
+    "strIngredient": "Cucumber",
+    "calories100g": 15
+  },
+  {
+    "idIngredient": "104",
+    "strIngredient": "Cumin",
+    "calories100g": 375
+  },
+  {
+    "idIngredient": "105",
+    "strIngredient": "Cumin Seeds",
+    "calories100g": 375
+  },
+  {
+    "idIngredient": "106",
+    "strIngredient": "Curry Powder",
+    "calories100g": 325
+  },
+  {
+    "idIngredient": "107",
+    "strIngredient": "Dark Brown Sugar",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "108",
+    "strIngredient": "Dark Soft Brown Sugar",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "109",
+    "strIngredient": "Dark Soy Sauce",
+    "calories100g": 53
+  },
+  {
+    "idIngredient": "110",
+    "strIngredient": "Demerara Sugar",
+    "calories100g": 377
+  },
+  {
+    "idIngredient": "111",
+    "strIngredient": "Diced Tomatoes",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "112",
+    "strIngredient": "Digestive Biscuits",
+    "calories100g": 478
+  },
+  {
+    "idIngredient": "113",
+    "strIngredient": "Dill",
+    "calories100g": 43
+  },
+  {
+    "idIngredient": "114",
+    "strIngredient": "Doner Meat",
+    "calories100g": 215
+  },
+  {
+    "idIngredient": "115",
+    "strIngredient": "Double Cream",
+    "calories100g": 455
+  },
+  {
+    "idIngredient": "116",
+    "strIngredient": "Dried Oregano",
+    "calories100g": 306
+  },
+  {
+    "idIngredient": "117",
+    "strIngredient": "Dry White Wine",
+    "calories100g": 83
+  },
+  {
+    "idIngredient": "119",
+    "strIngredient": "Egg Plants",
+    "calories100g": 24
+  },
+  {
+    "idIngredient": "120",
+    "strIngredient": "Egg Rolls",
+    "calories100g": 223
+  },
+  {
+    "idIngredient": "121",
+    "strIngredient": "Egg White",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "122",
+    "strIngredient": "Egg Yolks",
+    "calories100g": 322
+  },
+  {
+    "idIngredient": "123",
+    "strIngredient": "Eggs",
+    "calories100g": 147
+  },
+  {
+    "idIngredient": "124",
+    "strIngredient": "Enchilada Sauce",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "125",
+    "strIngredient": "English Mustard",
+    "calories100g": 202
+  },
+  {
+    "idIngredient": "126",
+    "strIngredient": "Extra Virgin Olive Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "127",
+    "strIngredient": "Fajita Seasoning",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "128",
+    "strIngredient": "Farfalle",
+    "calories100g": 351
+  },
+  {
+    "idIngredient": "130",
+    "strIngredient": "Fennel Bulb",
+    "calories100g": 31
+  },
+  {
+    "idIngredient": "131",
+    "strIngredient": "Fennel Seeds",
+    "calories100g": 345
+  },
+  {
+    "idIngredient": "132",
+    "strIngredient": "Fenugreek",
+    "calories100g": 323
+  },
+  {
+    "idIngredient": "133",
+    "strIngredient": "Feta",
+    "calories100g": 264
+  },
+  {
+    "idIngredient": "134",
+    "strIngredient": "Fish Sauce",
+    "calories100g": 60
+  },
+  {
+    "idIngredient": "135",
+    "strIngredient": "Flaked Almonds",
+    "calories100g": 579
+  },
+  {
+    "idIngredient": "136",
+    "strIngredient": "Flax Eggs",
+    "calories100g": 534
+  },
+  {
+    "idIngredient": "137",
+    "strIngredient": "Flour",
+    "calories100g": 364
+  },
+  {
+    "idIngredient": "138",
+    "strIngredient": "Flour Tortilla",
+    "calories100g": 310
+  },
+  {
+    "idIngredient": "139",
+    "strIngredient": "Floury Potatoes",
+    "calories100g": 77
+  },
+  {
+    "idIngredient": "140",
+    "strIngredient": "Free-range Egg, Beaten",
+    "calories100g": 143
+  },
+  {
+    "idIngredient": "141",
+    "strIngredient": "Free-range Eggs, Beaten",
+    "calories100g": 136
+  },
+  {
+    "idIngredient": "142",
+    "strIngredient": "French Lentils",
+    "calories100g": 116
+  },
+  {
+    "idIngredient": "143",
+    "strIngredient": "Fresh Basil",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "144",
+    "strIngredient": "Fresh Thyme",
+    "calories100g": 101
+  },
+  {
+    "idIngredient": "145",
+    "strIngredient": "Freshly Chopped Parsley",
+    "calories100g": 36
+  },
+  {
+    "idIngredient": "146",
+    "strIngredient": "Fries",
+    "calories100g": 274
+  },
+  {
+    "idIngredient": "147",
+    "strIngredient": "Full Fat Yogurt",
+    "calories100g": 61
+  },
+  {
+    "idIngredient": "148",
+    "strIngredient": "Garam Masala",
+    "calories100g": 103
+  },
+  {
+    "idIngredient": "149",
+    "strIngredient": "Garlic",
+    "calories100g": 149
+  },
+  {
+    "idIngredient": "150",
+    "strIngredient": "Garlic Clove",
+    "calories100g": 149
+  },
+  {
+    "idIngredient": "151",
+    "strIngredient": "Garlic Powder",
+    "calories100g": 332
+  },
+  {
+    "idIngredient": "152",
+    "strIngredient": "Garlic Sauce",
+    "calories100g": 342
+  },
+  {
+    "idIngredient": "153",
+    "strIngredient": "Ghee",
+    "calories100g": 897
+  },
+  {
+    "idIngredient": "154",
+    "strIngredient": "Ginger",
+    "calories100g": 80
+  },
+  {
+    "idIngredient": "155",
+    "strIngredient": "Ginger Cordial",
+    "calories100g": 20
+  },
+  {
+    "idIngredient": "156",
+    "strIngredient": "Ginger Garlic Paste",
+    "calories100g": 120
+  },
+  {
+    "idIngredient": "157",
+    "strIngredient": "Ginger Paste",
+    "calories100g": 80
+  },
+  {
+    "idIngredient": "158",
+    "strIngredient": "Golden Syrup",
+    "calories100g": 319
+  },
+  {
+    "idIngredient": "159",
+    "strIngredient": "Gouda Cheese",
+    "calories100g": 356
+  },
+  {
+    "idIngredient": "160",
+    "strIngredient": "Granulated Sugar",
+    "calories100g": 387
+  },
+  {
+    "idIngredient": "161",
+    "strIngredient": "Grape Tomatoes",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "162",
+    "strIngredient": "Greek Yogurt",
+    "calories100g": 59
+  },
+  {
+    "idIngredient": "163",
+    "strIngredient": "Green Beans",
+    "calories100g": 31
+  },
+  {
+    "idIngredient": "165",
+    "strIngredient": "Green Chilli",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "166",
+    "strIngredient": "Green Olives",
+    "calories100g": 145
+  },
+  {
+    "idIngredient": "167",
+    "strIngredient": "Green Red Lentils",
+    "calories100g": 353
+  },
+  {
+    "idIngredient": "168",
+    "strIngredient": "Green Salsa",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "169",
+    "strIngredient": "Ground Almonds",
+    "calories100g": 645
+  },
+  {
+    "idIngredient": "170",
+    "strIngredient": "Ground Cumin",
+    "calories100g": 375
+  },
+  {
+    "idIngredient": "171",
+    "strIngredient": "Ground Ginger",
+    "calories100g": 347
+  },
+  {
+    "idIngredient": "172",
+    "strIngredient": "Gruyère",
+    "calories100g": 413
+  },
+  {
+    "idIngredient": "173",
+    "strIngredient": "Hard Taco Shells",
+    "calories100g": 455
+  },
+  {
+    "idIngredient": "175",
+    "strIngredient": "Harissa Spice",
+    "calories100g": 62
+  },
+  {
+    "idIngredient": "176",
+    "strIngredient": "Heavy Cream",
+    "calories100g": 345
+  },
+  {
+    "idIngredient": "177",
+    "strIngredient": "Honey",
+    "calories100g": 304
+  },
+  {
+    "idIngredient": "178",
+    "strIngredient": "Horseradish",
+    "calories100g": 48
+  },
+  {
+    "idIngredient": "179",
+    "strIngredient": "Hot Beef Stock",
+    "calories100g": 17
+  },
+  {
+    "idIngredient": "180",
+    "strIngredient": "Hotsauce",
+    "calories100g": 11
+  },
+  {
+    "idIngredient": "181",
+    "strIngredient": "Ice Cream",
+    "calories100g": 201
+  },
+  {
+    "idIngredient": "182",
+    "strIngredient": "Italian Fennel Sausages",
+    "calories100g": 300
+  },
+  {
+    "idIngredient": "183",
+    "strIngredient": "Italian Seasoning",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "184",
+    "strIngredient": "Jalapeno",
+    "calories100g": 29
+  },
+  {
+    "idIngredient": "185",
+    "strIngredient": "Jasmine Rice",
+    "calories100g": 365
+  },
+  {
+    "idIngredient": "186",
+    "strIngredient": "Jerusalem Artichokes",
+    "calories100g": 73
+  },
+  {
+    "idIngredient": "187",
+    "strIngredient": "Kale",
+    "calories100g": 49
+  },
+  {
+    "idIngredient": "188",
+    "strIngredient": "Khus Khus",
+    "calories100g": 525
+  },
+  {
+    "idIngredient": "189",
+    "strIngredient": "King Prawns",
+    "calories100g": 99
+  },
+  {
+    "idIngredient": "190",
+    "strIngredient": "Kosher Salt",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "191",
+    "strIngredient": "Lamb",
+    "calories100g": 292
+  },
+  {
+    "idIngredient": "192",
+    "strIngredient": "Lamb Loin Chops",
+    "calories100g": 313
+  },
+  {
+    "idIngredient": "193",
+    "strIngredient": "Lamb Mince",
+    "calories100g": 283
+  },
+  {
+    "idIngredient": "194",
+    "strIngredient": "Lasagne Sheets",
+    "calories100g": 361
+  },
+  {
+    "idIngredient": "195",
+    "strIngredient": "Lean Minced Beef",
+    "calories100g": 230
+  },
+  {
+    "idIngredient": "196",
+    "strIngredient": "Leek",
+    "calories100g": 61
+  },
+  {
+    "idIngredient": "197",
+    "strIngredient": "Lemon",
+    "calories100g": 29
+  },
+  {
+    "idIngredient": "198",
+    "strIngredient": "Lemon Juice",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "199",
+    "strIngredient": "Lemon Zest",
+    "calories100g": 50
+  },
+  {
+    "idIngredient": "200",
+    "strIngredient": "Lemons",
+    "calories100g": 29
+  },
+  {
+    "idIngredient": "201",
+    "strIngredient": "Lettuce",
+    "calories100g": 14
+  },
+  {
+    "idIngredient": "202",
+    "strIngredient": "Lime",
+    "calories100g": 30
+  },
+  {
+    "idIngredient": "203",
+    "strIngredient": "Little Gem Lettuce",
+    "calories100g": 14
+  },
+  {
+    "idIngredient": "204",
+    "strIngredient": "Macaroni",
+    "calories100g": 157
+  },
+  {
+    "idIngredient": "205",
+    "strIngredient": "Mackerel",
+    "calories100g": 167
+  },
+  {
+    "idIngredient": "206",
+    "strIngredient": "Madras Paste",
+    "calories100g": 296
+  },
+  {
+    "idIngredient": "207",
+    "strIngredient": "Marjoram",
+    "calories100g": 271
+  },
+  {
+    "idIngredient": "208",
+    "strIngredient": "Massaman Curry Paste",
+    "calories100g": 180
+  },
+  {
+    "idIngredient": "209",
+    "strIngredient": "Medjool Dates",
+    "calories100g": 277
+  },
+  {
+    "idIngredient": "210",
+    "strIngredient": "Meringue Nests",
+    "calories100g": 384
+  },
+  {
+    "idIngredient": "211",
+    "strIngredient": "Milk",
+    "calories100g": 42
+  },
+  {
+    "idIngredient": "212",
+    "strIngredient": "Minced Garlic",
+    "calories100g": 149
+  },
+  {
+    "idIngredient": "213",
+    "strIngredient": "Miniature Marshmallows",
+    "calories100g": 318
+  },
+  {
+    "idIngredient": "214",
+    "strIngredient": "Mint",
+    "calories100g": 44
+  },
+  {
+    "idIngredient": "215",
+    "strIngredient": "Monterey Jack Cheese",
+    "calories100g": 373
+  },
+  {
+    "idIngredient": "216",
+    "strIngredient": "Mozzarella Balls",
+    "calories100g": 280
+  },
+  {
+    "idIngredient": "217",
+    "strIngredient": "Muscovado Sugar",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "218",
+    "strIngredient": "Mushrooms",
+    "calories100g": 22
+  },
+  {
+    "idIngredient": "219",
+    "strIngredient": "Mustard",
+    "calories100g": 66
+  },
+  {
+    "idIngredient": "220",
+    "strIngredient": "Mustard Powder",
+    "calories100g": 508
+  },
+  {
+    "idIngredient": "221",
+    "strIngredient": "Mustard Seeds",
+    "calories100g": 508
+  },
+  {
+    "idIngredient": "222",
+    "strIngredient": "Nutmeg",
+    "calories100g": 525
+  },
+  {
+    "idIngredient": "223",
+    "strIngredient": "Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "224",
+    "strIngredient": "Olive Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "226",
+    "strIngredient": "Onion Salt",
+    "calories100g": 89
+  },
+  {
+    "idIngredient": "227",
+    "strIngredient": "Onions",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "228",
+    "strIngredient": "Orange",
+    "calories100g": 47
+  },
+  {
+    "idIngredient": "229",
+    "strIngredient": "Orange Zest",
+    "calories100g": 97
+  },
+  {
+    "idIngredient": "230",
+    "strIngredient": "Oregano",
+    "calories100g": 306
+  },
+  {
+    "idIngredient": "231",
+    "strIngredient": "Oyster Sauce",
+    "calories100g": 51
+  },
+  {
+    "idIngredient": "232",
+    "strIngredient": "Paprika",
+    "calories100g": 289
+  },
+  {
+    "idIngredient": "233",
+    "strIngredient": "Parma Ham",
+    "calories100g": 283
+  },
+  {
+    "idIngredient": "234",
+    "strIngredient": "Parmesan",
+    "calories100g": 420
+  },
+  {
+    "idIngredient": "235",
+    "strIngredient": "Parmesan Cheese",
+    "calories100g": 420
+  },
+  {
+    "idIngredient": "236",
+    "strIngredient": "Parmigiano-reggiano",
+    "calories100g": 402
+  },
+  {
+    "idIngredient": "237",
+    "strIngredient": "Parsley",
+    "calories100g": 36
+  },
+  {
+    "idIngredient": "238",
+    "strIngredient": "Peanut Butter",
+    "calories100g": 588
+  },
+  {
+    "idIngredient": "239",
+    "strIngredient": "Peanut Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "240",
+    "strIngredient": "Peanuts",
+    "calories100g": 567
+  },
+  {
+    "idIngredient": "241",
+    "strIngredient": "Peas",
+    "calories100g": 81
+  },
+  {
+    "idIngredient": "242",
+    "strIngredient": "Pecorino",
+    "calories100g": 387
+  },
+  {
+    "idIngredient": "243",
+    "strIngredient": "Penne Rigate",
+    "calories100g": 357
+  },
+  {
+    "idIngredient": "244",
+    "strIngredient": "Pepper",
+    "calories100g": 251
+  },
+  {
+    "idIngredient": "245",
+    "strIngredient": "Pine Nuts",
+    "calories100g": 673
+  },
+  {
+    "idIngredient": "246",
+    "strIngredient": "Pitted Black Olives",
+    "calories100g": 155
+  },
+  {
+    "idIngredient": "247",
+    "strIngredient": "Plain Chocolate",
+    "calories100g": 479
+  },
+  {
+    "idIngredient": "248",
+    "strIngredient": "Plain Flour",
+    "calories100g": 345
+  },
+  {
+    "idIngredient": "249",
+    "strIngredient": "Plum Tomatoes",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "252",
+    "strIngredient": "Potato Starch",
+    "calories100g": 357
+  },
+  {
+    "idIngredient": "253",
+    "strIngredient": "Potatoes",
+    "calories100g": 77
+  },
+  {
+    "idIngredient": "254",
+    "strIngredient": "Prawns",
+    "calories100g": 105
+  },
+  {
+    "idIngredient": "255",
+    "strIngredient": "Puff Pastry",
+    "calories100g": 558
+  },
+  {
+    "idIngredient": "256",
+    "strIngredient": "Raspberry Jam",
+    "calories100g": 225
+  },
+  {
+    "idIngredient": "257",
+    "strIngredient": "Raw King Prawns",
+    "calories100g": 67
+  },
+  {
+    "idIngredient": "258",
+    "strIngredient": "Red Chilli Flakes",
+    "calories100g": 369
+  },
+  {
+    "idIngredient": "259",
+    "strIngredient": "Red Chilli",
+    "calories100g": 26
+  },
+  {
+    "idIngredient": "261",
+    "strIngredient": "Red Chilli Powder",
+    "calories100g": 314
+  },
+  {
+    "idIngredient": "263",
+    "strIngredient": "Red Onions",
+    "calories100g": 42
+  },
+  {
+    "idIngredient": "264",
+    "strIngredient": "Red Pepper",
+    "calories100g": 26
+  },
+  {
+    "idIngredient": "265",
+    "strIngredient": "Red Pepper Flakes",
+    "calories100g": 369
+  },
+  {
+    "idIngredient": "266",
+    "strIngredient": "Red Wine",
+    "calories100g": 85
+  },
+  {
+    "idIngredient": "267",
+    "strIngredient": "Refried Beans",
+    "calories100g": 94
+  },
+  {
+    "idIngredient": "268",
+    "strIngredient": "Rice",
+    "calories100g": 130
+  },
+  {
+    "idIngredient": "269",
+    "strIngredient": "Rice Noodles",
+    "calories100g": 364
+  },
+  {
+    "idIngredient": "270",
+    "strIngredient": "Rice Stick Noodles",
+    "calories100g": 364
+  },
+  {
+    "idIngredient": "271",
+    "strIngredient": "Rice Vermicelli",
+    "calories100g": 382
+  },
+  {
+    "idIngredient": "272",
+    "strIngredient": "Rigatoni",
+    "calories100g": 350
+  },
+  {
+    "idIngredient": "273",
+    "strIngredient": "Rocket",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "274",
+    "strIngredient": "Rolled Oats",
+    "calories100g": 379
+  },
+  {
+    "idIngredient": "276",
+    "strIngredient": "Saffron",
+    "calories100g": 310
+  },
+  {
+    "idIngredient": "277",
+    "strIngredient": "Sage",
+    "calories100g": 300
+  },
+  {
+    "idIngredient": "278",
+    "strIngredient": "Sake",
+    "calories100g": 134
+  },
+  {
+    "idIngredient": "280",
+    "strIngredient": "Salsa",
+    "calories100g": 27
+  },
+  {
+    "idIngredient": "281",
+    "strIngredient": "Salt",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "282",
+    "strIngredient": "Salted Butter",
+    "calories100g": 717
+  },
+  {
+    "idIngredient": "283",
+    "strIngredient": "Sausages",
+    "calories100g": 304
+  },
+  {
+    "idIngredient": "284",
+    "strIngredient": "Sea Salt",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "286",
+    "strIngredient": "Self-raising Flour",
+    "calories100g": 366
+  },
+  {
+    "idIngredient": "287",
+    "strIngredient": "Semi-skimmed Milk",
+    "calories100g": 48
+  },
+  {
+    "idIngredient": "288",
+    "strIngredient": "Sesame Seed",
+    "calories100g": 573
+  },
+  {
+    "idIngredient": "289",
+    "strIngredient": "Shallots",
+    "calories100g": 72
+  },
+  {
+    "idIngredient": "290",
+    "strIngredient": "Shredded Mexican Cheese",
+    "calories100g": 356
+  },
+  {
+    "idIngredient": "291",
+    "strIngredient": "Shredded Monterey Jack Cheese",
+    "calories100g": 356
+  },
+  {
+    "idIngredient": "292",
+    "strIngredient": "Small Potatoes",
+    "calories100g": 77
+  },
+  {
+    "idIngredient": "293",
+    "strIngredient": "Smoked Paprika",
+    "calories100g": 282
+  },
+  {
+    "idIngredient": "294",
+    "strIngredient": "Smoky Paprika",
+    "calories100g": 282
+  },
+  {
+    "idIngredient": "295",
+    "strIngredient": "Sour Cream",
+    "calories100g": 193
+  },
+  {
+    "idIngredient": "296",
+    "strIngredient": "Soy Sauce",
+    "calories100g": 53
+  },
+  {
+    "idIngredient": "297",
+    "strIngredient": "Soya Milk",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "298",
+    "strIngredient": "Spaghetti",
+    "calories100g": 371
+  },
+  {
+    "idIngredient": "299",
+    "strIngredient": "Spinach",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "301",
+    "strIngredient": "Spring Onions",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "302",
+    "strIngredient": "Squash",
+    "calories100g": 45
+  },
+  {
+    "idIngredient": "303",
+    "strIngredient": "Stir-fry Vegetables",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "304",
+    "strIngredient": "Strawberries",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "305",
+    "strIngredient": "Sugar",
+    "calories100g": 387
+  },
+  {
+    "idIngredient": "306",
+    "strIngredient": "Sultanas",
+    "calories100g": 302
+  },
+  {
+    "idIngredient": "307",
+    "strIngredient": "Sunflower Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "308",
+    "strIngredient": "Tamarind Ball",
+    "calories100g": 393
+  },
+  {
+    "idIngredient": "309",
+    "strIngredient": "Tamarind Paste",
+    "calories100g": 289
+  },
+  {
+    "idIngredient": "310",
+    "strIngredient": "Thai Fish Sauce",
+    "calories100g": 35
+  },
+  {
+    "idIngredient": "311",
+    "strIngredient": "Thai Green Curry Paste",
+    "calories100g": 100
+  },
+  {
+    "idIngredient": "312",
+    "strIngredient": "Thai Red Curry Paste",
+    "calories100g": 100
+  },
+  {
+    "idIngredient": "313",
+    "strIngredient": "Thyme",
+    "calories100g": 276
+  },
+  {
+    "idIngredient": "315",
+    "strIngredient": "Tomato Ketchup",
+    "calories100g": 112
+  },
+  {
+    "idIngredient": "316",
+    "strIngredient": "Tomato Puree",
+    "calories100g": 82
+  },
+  {
+    "idIngredient": "317",
+    "strIngredient": "Tomatoes",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "318",
+    "strIngredient": "Toor Dal",
+    "calories100g": 343
+  },
+  {
+    "idIngredient": "319",
+    "strIngredient": "Tuna",
+    "calories100g": 132
+  },
+  {
+    "idIngredient": "320",
+    "strIngredient": "Turmeric",
+    "calories100g": 312
+  },
+  {
+    "idIngredient": "321",
+    "strIngredient": "Turmeric Powder",
+    "calories100g": 354
+  },
+  {
+    "idIngredient": "322",
+    "strIngredient": "Turnips",
+    "calories100g": 28
+  },
+  {
+    "idIngredient": "323",
+    "strIngredient": "Vanilla",
+    "calories100g": 288
+  },
+  {
+    "idIngredient": "324",
+    "strIngredient": "Vanilla Extract",
+    "calories100g": 288
+  },
+  {
+    "idIngredient": "325",
+    "strIngredient": "Veal",
+    "calories100g": 229
+  },
+  {
+    "idIngredient": "326",
+    "strIngredient": "Vegan Butter",
+    "calories100g": 714
+  },
+  {
+    "idIngredient": "327",
+    "strIngredient": "Vegetable Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "328",
+    "strIngredient": "Vegetable Stock",
+    "calories100g": 7
+  },
+  {
+    "idIngredient": "329",
+    "strIngredient": "Vegetable Stock Cube",
+    "calories100g": 269
+  },
+  {
+    "idIngredient": "330",
+    "strIngredient": "Vinaigrette Dressing",
+    "calories100g": 291
+  },
+  {
+    "idIngredient": "331",
+    "strIngredient": "Vine Leaves",
+    "calories100g": 93
+  },
+  {
+    "idIngredient": "332",
+    "strIngredient": "Vinegar",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "333",
+    "strIngredient": "Water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "334",
+    "strIngredient": "White Chocolate Chips",
+    "calories100g": 85
+  },
+  {
+    "idIngredient": "335",
+    "strIngredient": "White Fish",
+    "calories100g": 134
+  },
+  {
+    "idIngredient": "336",
+    "strIngredient": "White Fish Fillets",
+    "calories100g": 134
+  },
+  {
+    "idIngredient": "337",
+    "strIngredient": "White Vinegar",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "338",
+    "strIngredient": "White Wine",
+    "calories100g": 82
+  },
+  {
+    "idIngredient": "339",
+    "strIngredient": "Whole Milk",
+    "calories100g": 61
+  },
+  {
+    "idIngredient": "340",
+    "strIngredient": "Whole Wheat",
+    "calories100g": 340
+  },
+  {
+    "idIngredient": "341",
+    "strIngredient": "Wholegrain Bread",
+    "calories100g": 259
+  },
+  {
+    "idIngredient": "342",
+    "strIngredient": "Worcestershire Sauce",
+    "calories100g": 67
+  },
+  {
+    "idIngredient": "343",
+    "strIngredient": "Yogurt",
+    "calories100g": 61
+  },
+  {
+    "idIngredient": "344",
+    "strIngredient": "Zucchini",
+    "calories100g": 16
+  },
+  {
+    "idIngredient": "345",
+    "strIngredient": "Pretzels",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "346",
+    "strIngredient": "Cream Cheese",
+    "calories100g": 349
+  },
+  {
+    "idIngredient": "347",
+    "strIngredient": "Icing Sugar",
+    "calories100g": 389
+  },
+  {
+    "idIngredient": "348",
+    "strIngredient": "Toffee Popcorn",
+    "calories100g": 393
+  },
+  {
+    "idIngredient": "349",
+    "strIngredient": "Caramel",
+    "calories100g": 382
+  },
+  {
+    "idIngredient": "350",
+    "strIngredient": "Caramel Sauce",
+    "calories100g": 286
+  },
+  {
+    "idIngredient": "351",
+    "strIngredient": "Tagliatelle",
+    "calories100g": 367
+  },
+  {
+    "idIngredient": "352",
+    "strIngredient": "Fettuccine",
+    "calories100g": 99
+  },
+  {
+    "idIngredient": "353",
+    "strIngredient": "Clotted Cream",
+    "calories100g": 577
+  },
+  {
+    "idIngredient": "354",
+    "strIngredient": "Corn Flour",
+    "calories100g": 366
+  },
+  {
+    "idIngredient": "355",
+    "strIngredient": "Mussels",
+    "calories100g": 86
+  },
+  {
+    "idIngredient": "356",
+    "strIngredient": "Fideo",
+    "calories100g": 367
+  },
+  {
+    "idIngredient": "357",
+    "strIngredient": "Monkfish",
+    "calories100g": 76
+  },
+  {
+    "idIngredient": "358",
+    "strIngredient": "Vermicelli Pasta",
+    "calories100g": 367
+  },
+  {
+    "idIngredient": "359",
+    "strIngredient": "Baby Squid",
+    "calories100g": 92
+  },
+  {
+    "idIngredient": "360",
+    "strIngredient": "Squid",
+    "calories100g": 92
+  },
+  {
+    "idIngredient": "361",
+    "strIngredient": "Fish Stock",
+    "calories100g": 17
+  },
+  {
+    "idIngredient": "362",
+    "strIngredient": "Pilchards",
+    "calories100g": 105
+  },
+  {
+    "idIngredient": "363",
+    "strIngredient": "Black Olives",
+    "calories100g": 105
+  },
+  {
+    "idIngredient": "364",
+    "strIngredient": "Onion",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "365",
+    "strIngredient": "Tomato",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "366",
+    "strIngredient": "Duck",
+    "calories100g": 336
+  },
+  {
+    "idIngredient": "367",
+    "strIngredient": "Duck Legs",
+    "calories100g": 217
+  },
+  {
+    "idIngredient": "368",
+    "strIngredient": "Chicken Stock Cube",
+    "calories100g": 198
+  },
+  {
+    "idIngredient": "369",
+    "strIngredient": "Pappardelle Pasta",
+    "calories100g": 357
+  },
+  {
+    "idIngredient": "370",
+    "strIngredient": "Paccheri Pasta",
+    "calories100g": 375
+  },
+  {
+    "idIngredient": "371",
+    "strIngredient": "Linguine Pasta",
+    "calories100g": 157
+  },
+  {
+    "idIngredient": "373",
+    "strIngredient": "Sugar Snap Peas",
+    "calories100g": 42
+  },
+  {
+    "idIngredient": "374",
+    "strIngredient": "Crusty Bread",
+    "calories100g": 259
+  },
+  {
+    "idIngredient": "375",
+    "strIngredient": "Fromage Frais",
+    "calories100g": 54
+  },
+  {
+    "idIngredient": "376",
+    "strIngredient": "Clams",
+    "calories100g": 148
+  },
+  {
+    "idIngredient": "377",
+    "strIngredient": "Passata",
+    "calories100g": 29
+  },
+  {
+    "idIngredient": "378",
+    "strIngredient": "Rapeseed Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "379",
+    "strIngredient": "Stilton Cheese",
+    "calories100g": 410
+  },
+  {
+    "idIngredient": "380",
+    "strIngredient": "Lamb Leg",
+    "calories100g": 294
+  },
+  {
+    "idIngredient": "381",
+    "strIngredient": "Lamb Shoulder",
+    "calories100g": 305
+  },
+  {
+    "idIngredient": "382",
+    "strIngredient": "Apricot",
+    "calories100g": 48
+  },
+  {
+    "idIngredient": "383",
+    "strIngredient": "Butternut Squash",
+    "calories100g": 45
+  },
+  {
+    "idIngredient": "384",
+    "strIngredient": "Couscous",
+    "calories100g": 376
+  },
+  {
+    "idIngredient": "387",
+    "strIngredient": "Minced Beef",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "388",
+    "strIngredient": "Turkey Mince",
+    "calories100g": 189
+  },
+  {
+    "idIngredient": "389",
+    "strIngredient": "Barbeque Sauce",
+    "calories100g": 150
+  },
+  {
+    "idIngredient": "390",
+    "strIngredient": "Sweetcorn",
+    "calories100g": 86
+  },
+  {
+    "idIngredient": "391",
+    "strIngredient": "Goose Fat",
+    "calories100g": 900
+  },
+  {
+    "idIngredient": "392",
+    "strIngredient": "Duck Fat",
+    "calories100g": 882
+  },
+  {
+    "idIngredient": "393",
+    "strIngredient": "Fennel",
+    "calories100g": 31
+  },
+  {
+    "idIngredient": "394",
+    "strIngredient": "Red Wine Vinegar",
+    "calories100g": 19
+  },
+  {
+    "idIngredient": "395",
+    "strIngredient": "Haricot Beans",
+    "calories100g": 127
+  },
+  {
+    "idIngredient": "396",
+    "strIngredient": "Rosemary",
+    "calories100g": 131
+  },
+  {
+    "idIngredient": "397",
+    "strIngredient": "Butter Beans",
+    "calories100g": 91
+  },
+  {
+    "idIngredient": "398",
+    "strIngredient": "Pinto Beans",
+    "calories100g": 115
+  },
+  {
+    "idIngredient": "399",
+    "strIngredient": "Tomato Sauce",
+    "calories100g": 37
+  },
+  {
+    "idIngredient": "401",
+    "strIngredient": "Mascarpone",
+    "calories100g": 309
+  },
+  {
+    "idIngredient": "402",
+    "strIngredient": "Mozzarella",
+    "calories100g": 302
+  },
+  {
+    "idIngredient": "403",
+    "strIngredient": "Ricotta",
+    "calories100g": 156
+  },
+  {
+    "idIngredient": "405",
+    "strIngredient": "Dried Apricots",
+    "calories100g": 241
+  },
+  {
+    "idIngredient": "406",
+    "strIngredient": "Capers",
+    "calories100g": 23
+  },
+  {
+    "idIngredient": "407",
+    "strIngredient": "Banana",
+    "calories100g": 89
+  },
+  {
+    "idIngredient": "408",
+    "strIngredient": "Raspberries",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "409",
+    "strIngredient": "Blueberries",
+    "calories100g": 57
+  },
+  {
+    "idIngredient": "410",
+    "strIngredient": "Walnuts",
+    "calories100g": 654
+  },
+  {
+    "idIngredient": "411",
+    "strIngredient": "Pecan Nuts",
+    "calories100g": 691
+  },
+  {
+    "idIngredient": "412",
+    "strIngredient": "Maple Syrup",
+    "calories100g": 261
+  },
+  {
+    "idIngredient": "413",
+    "strIngredient": "Light Brown Soft Sugar",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "414",
+    "strIngredient": "Dark Brown Soft Sugar",
+    "calories100g": 380
+  },
+  {
+    "idIngredient": "415",
+    "strIngredient": "Dark Chocolate Chips",
+    "calories100g": 546
+  },
+  {
+    "idIngredient": "416",
+    "strIngredient": "Milk Chocolate",
+    "calories100g": 535
+  },
+  {
+    "idIngredient": "417",
+    "strIngredient": "Dark Chocolate",
+    "calories100g": 546
+  },
+  {
+    "idIngredient": "418",
+    "strIngredient": "Pumpkin",
+    "calories100g": 26
+  },
+  {
+    "idIngredient": "419",
+    "strIngredient": "Shortcrust Pastry",
+    "calories100g": 450
+  },
+  {
+    "idIngredient": "420",
+    "strIngredient": "Peanut Cookies",
+    "calories100g": 500
+  },
+  {
+    "idIngredient": "421",
+    "strIngredient": "Gelatine Leafs",
+    "calories100g": 335
+  },
+  {
+    "idIngredient": "422",
+    "strIngredient": "Peanut Brittle",
+    "calories100g": 500
+  },
+  {
+    "idIngredient": "423",
+    "strIngredient": "Peaches",
+    "calories100g": 39
+  },
+  {
+    "idIngredient": "424",
+    "strIngredient": "Yellow Pepper",
+    "calories100g": 27
+  },
+  {
+    "idIngredient": "425",
+    "strIngredient": "Green Pepper",
+    "calories100g": 20
+  },
+  {
+    "idIngredient": "426",
+    "strIngredient": "Courgettes",
+    "calories100g": 17
+  },
+  {
+    "idIngredient": "427",
+    "strIngredient": "Tinned Tomatos",
+    "calories100g": 24
+  },
+  {
+    "idIngredient": "428",
+    "strIngredient": "Chestnuts",
+    "calories100g": 213
+  },
+  {
+    "idIngredient": "429",
+    "strIngredient": "Wild Mushrooms",
+    "calories100g": 22
+  },
+  {
+    "idIngredient": "430",
+    "strIngredient": "Truffle Oil",
+    "calories100g": 900
+  },
+  {
+    "idIngredient": "431",
+    "strIngredient": "Paneer",
+    "calories100g": 321
+  },
+  {
+    "idIngredient": "432",
+    "strIngredient": "Naan Bread",
+    "calories100g": 336
+  },
+  {
+    "idIngredient": "433",
+    "strIngredient": "Lentils",
+    "calories100g": 353
+  },
+  {
+    "idIngredient": "434",
+    "strIngredient": "Roasted Vegetables",
+    "calories100g": 92
+  },
+  {
+    "idIngredient": "435",
+    "strIngredient": "Kidney Beans",
+    "calories100g": 127
+  },
+  {
+    "idIngredient": "436",
+    "strIngredient": "Mixed Grain",
+    "calories100g": 353
+  },
+  {
+    "idIngredient": "437",
+    "strIngredient": "Tahini",
+    "calories100g": 592
+  },
+  {
+    "idIngredient": "438",
+    "strIngredient": "Tortillas",
+    "calories100g": 312
+  },
+  {
+    "idIngredient": "439",
+    "strIngredient": "Udon Noodles",
+    "calories100g": 104
+  },
+  {
+    "idIngredient": "440",
+    "strIngredient": "Cabbage",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "441",
+    "strIngredient": "Shiitake Mushrooms",
+    "calories100g": 34
+  },
+  {
+    "idIngredient": "442",
+    "strIngredient": "Mirin",
+    "calories100g": 236
+  },
+  {
+    "idIngredient": "443",
+    "strIngredient": "Sesame Seed Oil",
+    "calories100g": 900
+  },
+  {
+    "idIngredient": "444",
+    "strIngredient": "Baguette",
+    "calories100g": 274
+  },
+  {
+    "idIngredient": "445",
+    "strIngredient": "Vine Tomatoes",
+    "calories100g": 12
+  },
+  {
+    "idIngredient": "446",
+    "strIngredient": "Suet",
+    "calories100g": 883
+  },
+  {
+    "idIngredient": "447",
+    "strIngredient": "Swede",
+    "calories100g": 38
+  },
+  {
+    "idIngredient": "448",
+    "strIngredient": "Ham",
+    "calories100g": 145
+  },
+  {
+    "idIngredient": "449",
+    "strIngredient": "Oysters",
+    "calories100g": 68
+  },
+  {
+    "idIngredient": "450",
+    "strIngredient": "Stout",
+    "calories100g": 43
+  },
+  {
+    "idIngredient": "451",
+    "strIngredient": "Lard",
+    "calories100g": 902
+  },
+  {
+    "idIngredient": "452",
+    "strIngredient": "Lamb Kidney",
+    "calories100g": 98
+  },
+  {
+    "idIngredient": "453",
+    "strIngredient": "Beef Kidney",
+    "calories100g": 103
+  },
+  {
+    "idIngredient": "454",
+    "strIngredient": "Haddock",
+    "calories100g": 90
+  },
+  {
+    "idIngredient": "455",
+    "strIngredient": "Smoked Haddock",
+    "calories100g": 116
+  },
+  {
+    "idIngredient": "456",
+    "strIngredient": "Brussels Sprouts",
+    "calories100g": 36
+  },
+  {
+    "idIngredient": "457",
+    "strIngredient": "Raisins",
+    "calories100g": 299
+  },
+  {
+    "idIngredient": "458",
+    "strIngredient": "Currants",
+    "calories100g": 56
+  },
+  {
+    "idIngredient": "459",
+    "strIngredient": "Custard",
+    "calories100g": 95
+  },
+  {
+    "idIngredient": "460",
+    "strIngredient": "Mixed Peel",
+    "calories100g": 303
+  },
+  {
+    "idIngredient": "461",
+    "strIngredient": "Redcurrants",
+    "calories100g": 56
+  },
+  {
+    "idIngredient": "462",
+    "strIngredient": "Blackberries",
+    "calories100g": 43
+  },
+  {
+    "idIngredient": "463",
+    "strIngredient": "Hazelnuts",
+    "calories100g": 628
+  },
+  {
+    "idIngredient": "464",
+    "strIngredient": "Braeburn Apples",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "465",
+    "strIngredient": "Red Food Colouring",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "466",
+    "strIngredient": "Pink Food Colouring",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "467",
+    "strIngredient": "Blue Food Colouring",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "468",
+    "strIngredient": "Yellow Food Colouring",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "469",
+    "strIngredient": "Apricot Jam",
+    "calories100g": 240
+  },
+  {
+    "idIngredient": "470",
+    "strIngredient": "Marzipan",
+    "calories100g": 458
+  },
+  {
+    "idIngredient": "471",
+    "strIngredient": "Almonds",
+    "calories100g": 579
+  },
+  {
+    "idIngredient": "472",
+    "strIngredient": "Black Pudding",
+    "calories100g": 379
+  },
+  {
+    "idIngredient": "473",
+    "strIngredient": "Baked Beans",
+    "calories100g": 155
+  },
+  {
+    "idIngredient": "474",
+    "strIngredient": "White Flour",
+    "calories100g": 364
+  },
+  {
+    "idIngredient": "475",
+    "strIngredient": "Yeast",
+    "calories100g": 325
+  },
+  {
+    "idIngredient": "476",
+    "strIngredient": "Fruit Mix",
+    "calories100g": 325
+  },
+  {
+    "idIngredient": "477",
+    "strIngredient": "Dried Fruit",
+    "calories100g": 325
+  },
+  {
+    "idIngredient": "478",
+    "strIngredient": "Cherry",
+    "calories100g": 50
+  },
+  {
+    "idIngredient": "479",
+    "strIngredient": "Glace Cherry",
+    "calories100g": 322
+  },
+  {
+    "idIngredient": "480",
+    "strIngredient": "Treacle",
+    "calories100g": 290
+  },
+  {
+    "idIngredient": "481",
+    "strIngredient": "Oatmeal",
+    "calories100g": 71
+  },
+  {
+    "idIngredient": "482",
+    "strIngredient": "Oats",
+    "calories100g": 389
+  },
+  {
+    "idIngredient": "483",
+    "strIngredient": "Egg",
+    "calories100g": 155
+  },
+  {
+    "idIngredient": "484",
+    "strIngredient": "Beef Shin",
+    "calories100g": 288
+  },
+  {
+    "idIngredient": "485",
+    "strIngredient": "Bouquet Garni",
+    "calories100g": 275
+  },
+  {
+    "idIngredient": "486",
+    "strIngredient": "Single Cream",
+    "calories100g": 130
+  },
+  {
+    "idIngredient": "487",
+    "strIngredient": "Red Wine Jelly",
+    "calories100g": 236
+  },
+  {
+    "idIngredient": "488",
+    "strIngredient": "Apples",
+    "calories100g": 52
+  },
+  {
+    "idIngredient": "489",
+    "strIngredient": "Goats Cheese",
+    "calories100g": 361
+  },
+  {
+    "idIngredient": "490",
+    "strIngredient": "Prosciutto",
+    "calories100g": 195
+  },
+  {
+    "idIngredient": "491",
+    "strIngredient": "Unsalted Butter",
+    "calories100g": 717
+  },
+  {
+    "idIngredient": "492",
+    "strIngredient": "Brie",
+    "calories100g": 334
+  },
+  {
+    "idIngredient": "493",
+    "strIngredient": "Tarragon Leaves",
+    "calories100g": 295
+  },
+  {
+    "idIngredient": "494",
+    "strIngredient": "Chives",
+    "calories100g": 30
+  },
+  {
+    "idIngredient": "495",
+    "strIngredient": "Pears",
+    "calories100g": 44
+  },
+  {
+    "idIngredient": "496",
+    "strIngredient": "White Chocolate",
+    "calories100g": 539
+  },
+  {
+    "idIngredient": "497",
+    "strIngredient": "Star Anise",
+    "calories100g": 337
+  },
+  {
+    "idIngredient": "498",
+    "strIngredient": "Tiger Prawns",
+    "calories100g": 99
+  },
+  {
+    "idIngredient": "499",
+    "strIngredient": "Custard Powder",
+    "calories100g": 357
+  },
+  {
+    "idIngredient": "500",
+    "strIngredient": "Desiccated Coconut",
+    "calories100g": 660
+  },
+  {
+    "idIngredient": "501",
+    "strIngredient": "Frozen Peas",
+    "calories100g": 81
+  },
+  {
+    "idIngredient": "502",
+    "strIngredient": "Minced Pork",
+    "calories100g": 263
+  },
+  {
+    "idIngredient": "503",
+    "strIngredient": "Creamed Corn",
+    "calories100g": 78
+  },
+  {
+    "idIngredient": "504",
+    "strIngredient": "Sun-Dried Tomatoes",
+    "calories100g": 258
+  },
+  {
+    "idIngredient": "505",
+    "strIngredient": "Dijon Mustard",
+    "calories100g": 66
+  },
+  {
+    "idIngredient": "506",
+    "strIngredient": "Tabasco Sauce",
+    "calories100g": 12
+  },
+  {
+    "idIngredient": "507",
+    "strIngredient": "Canola Oil",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "508",
+    "strIngredient": "Cod",
+    "calories100g": 82
+  },
+  {
+    "idIngredient": "509",
+    "strIngredient": "Salt Cod",
+    "calories100g": 290
+  },
+  {
+    "idIngredient": "510",
+    "strIngredient": "Ackee",
+    "calories100g": 140
+  },
+  {
+    "idIngredient": "511",
+    "strIngredient": "Jerk",
+    "calories100g": 50
+  },
+  {
+    "idIngredient": "512",
+    "strIngredient": "Ground Beef",
+    "calories100g": 254
+  },
+  {
+    "idIngredient": "513",
+    "strIngredient": "Baby Aubergine",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "514",
+    "strIngredient": "Paella Rice",
+    "calories100g": 355
+  },
+  {
+    "idIngredient": "515",
+    "strIngredient": "Scotch Bonnet",
+    "calories100g": 24
+  },
+  {
+    "idIngredient": "516",
+    "strIngredient": "Oxtail",
+    "calories100g": 262
+  },
+  {
+    "idIngredient": "517",
+    "strIngredient": "Broad Beans",
+    "calories100g": 88
+  },
+  {
+    "idIngredient": "518",
+    "strIngredient": "Red Snapper",
+    "calories100g": 128
+  },
+  {
+    "idIngredient": "519",
+    "strIngredient": "Malt Vinegar",
+    "calories100g": 22
+  },
+  {
+    "idIngredient": "520",
+    "strIngredient": "Rice Vinegar",
+    "calories100g": 34
+  },
+  {
+    "idIngredient": "521",
+    "strIngredient": "Water Chestnut",
+    "calories100g": 97
+  },
+  {
+    "idIngredient": "522",
+    "strIngredient": "Tofu",
+    "calories100g": 144
+  },
+  {
+    "idIngredient": "523",
+    "strIngredient": "Doubanjiang",
+    "calories100g": 120
+  },
+  {
+    "idIngredient": "524",
+    "strIngredient": "Fermented Black Beans",
+    "calories100g": 200
+  },
+  {
+    "idIngredient": "525",
+    "strIngredient": "Scallions",
+    "calories100g": 32
+  },
+  {
+    "idIngredient": "526",
+    "strIngredient": "Sichuan Pepper",
+    "calories100g": 305
+  },
+  {
+    "idIngredient": "527",
+    "strIngredient": "Wonton Skin",
+    "calories100g": 275
+  },
+  {
+    "idIngredient": "528",
+    "strIngredient": "Starch",
+    "calories100g": 350
+  },
+  {
+    "idIngredient": "529",
+    "strIngredient": "Rice wine",
+    "calories100g": 134
+  },
+  {
+    "idIngredient": "530",
+    "strIngredient": "Cooking wine",
+    "calories100g": 134
+  },
+  {
+    "idIngredient": "531",
+    "strIngredient": "Duck Sauce",
+    "calories100g": 235
+  },
+  {
+    "idIngredient": "532",
+    "strIngredient": "Gochujang",
+    "calories100g": 211
+  },
+  {
+    "idIngredient": "533",
+    "strIngredient": "Bean Sprouts",
+    "calories100g": 30
+  },
+  {
+    "idIngredient": "534",
+    "strIngredient": "Noodles",
+    "calories100g": 138
+  },
+  {
+    "idIngredient": "535",
+    "strIngredient": "Wood Ear Mushrooms",
+    "calories100g": 25
+  },
+  {
+    "idIngredient": "536",
+    "strIngredient": "Dark Rum",
+    "calories100g": 231
+  },
+  {
+    "idIngredient": "537",
+    "strIngredient": "Light Rum",
+    "calories100g": 231
+  },
+  {
+    "idIngredient": "538",
+    "strIngredient": "Rum",
+    "calories100g": 231
+  },
+  {
+    "idIngredient": "539",
+    "strIngredient": "English Muffins",
+    "calories100g": 227
+  },
+  {
+    "idIngredient": "540",
+    "strIngredient": "Muffins",
+    "calories100g": 296
+  },
+  {
+    "idIngredient": "541",
+    "strIngredient": "White Wine Vinegar",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "542",
+    "strIngredient": "Smoked Salmon",
+    "calories100g": 117
+  },
+  {
+    "idIngredient": "543",
+    "strIngredient": "Mars Bar",
+    "calories100g": 448
+  },
+  {
+    "idIngredient": "544",
+    "strIngredient": "Rice Krispies",
+    "calories100g": 387
+  },
+  {
+    "idIngredient": "545",
+    "strIngredient": "Ancho Chillies",
+    "calories100g": 281
+  },
+  {
+    "idIngredient": "546",
+    "strIngredient": "Almond Milk",
+    "calories100g": 15
+  },
+  {
+    "idIngredient": "548",
+    "strIngredient": "Allspice",
+    "calories100g": 263
+  },
+  {
+    "idIngredient": "550",
+    "strIngredient": "Almond Extract",
+    "calories100g": 327
+  },
+  {
+    "idIngredient": "552",
+    "strIngredient": "Tripe",
+    "calories100g": 85
+  },
+  {
+    "idIngredient": "553",
+    "strIngredient": "Goat Meat",
+    "calories100g": 143
+  },
+  {
+    "idIngredient": "554",
+    "strIngredient": "Black Beans",
+    "calories100g": 339
+  },
+  {
+    "idIngredient": "555",
+    "strIngredient": "Anchovy Fillet",
+    "calories100g": 210
+  },
+  {
+    "idIngredient": "556",
+    "strIngredient": "Ras el hanout",
+    "calories100g": 333
+  },
+  {
+    "idIngredient": "557",
+    "strIngredient": "Filo Pastry",
+    "calories100g": 299
+  },
+  {
+    "idIngredient": "558",
+    "strIngredient": "Orange Blossom Water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "559",
+    "strIngredient": "Candied Peel",
+    "calories100g": 352
+  },
+  {
+    "idIngredient": "560",
+    "strIngredient": "Grand Marnier",
+    "calories100g": 253
+  },
+  {
+    "idIngredient": "561",
+    "strIngredient": "Sherry",
+    "calories100g": 106
+  },
+  {
+    "idIngredient": "562",
+    "strIngredient": "Rose water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "563",
+    "strIngredient": "Mixed Spice",
+    "calories100g": 325
+  },
+  {
+    "idIngredient": "564",
+    "strIngredient": "Mincemeat",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "565",
+    "strIngredient": "Sweet Potatoes",
+    "calories100g": 86
+  },
+  {
+    "idIngredient": "566",
+    "strIngredient": "Bread Rolls",
+    "calories100g": 300
+  },
+  {
+    "idIngredient": "567",
+    "strIngredient": "Bun",
+    "calories100g": 278
+  },
+  {
+    "idIngredient": "568",
+    "strIngredient": "Potatoe Buns",
+    "calories100g": 281
+  },
+  {
+    "idIngredient": "569",
+    "strIngredient": "Ground Pork",
+    "calories100g": 263
+  },
+  {
+    "idIngredient": "570",
+    "strIngredient": "Pork Chops",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "571",
+    "strIngredient": "Yukon Gold Potatoes",
+    "calories100g": 87
+  },
+  {
+    "idIngredient": "572",
+    "strIngredient": "Yellow Onion",
+    "calories100g": 40
+  },
+  {
+    "idIngredient": "573",
+    "strIngredient": "Beef Stock Concentrate",
+    "calories100g": 200
+  },
+  {
+    "idIngredient": "574",
+    "strIngredient": "Chicken Stock Concentrate",
+    "calories100g": 200
+  },
+  {
+    "idIngredient": "575",
+    "strIngredient": "Persian Cucumber",
+    "calories100g": 16
+  },
+  {
+    "idIngredient": "576",
+    "strIngredient": "Mayonnaise",
+    "calories100g": 680
+  },
+  {
+    "idIngredient": "577",
+    "strIngredient": "Sriracha",
+    "calories100g": 93
+  },
+  {
+    "idIngredient": "578",
+    "strIngredient": "Rhubarb",
+    "calories100g": 21
+  },
+  {
+    "idIngredient": "579",
+    "strIngredient": "Pita Bread",
+    "calories100g": 275
+  },
+  {
+    "idIngredient": "580",
+    "strIngredient": "Bulgur Wheat",
+    "calories100g": 342
+  },
+  {
+    "idIngredient": "581",
+    "strIngredient": "Quinoa",
+    "calories100g": 374
+  },
+  {
+    "idIngredient": "582",
+    "strIngredient": "Dill Pickles",
+    "calories100g": 18
+  },
+  {
+    "idIngredient": "583",
+    "strIngredient": "Sesame Seed Burger Buns",
+    "calories100g": 278
+  },
+  {
+    "idIngredient": "585",
+    "strIngredient": "Buns",
+    "calories100g": 278
+  },
+  {
+    "idIngredient": "586",
+    "strIngredient": "Iceberg Lettuce",
+    "calories100g": 14
+  },
+  {
+    "idIngredient": "587",
+    "strIngredient": "Gherkin Relish",
+    "calories100g": 104
+  },
+  {
+    "idIngredient": "588",
+    "strIngredient": "Cheese Slices",
+    "calories100g": 370
+  },
+  {
+    "idIngredient": "589",
+    "strIngredient": "Shortening",
+    "calories100g": 884
+  },
+  {
+    "idIngredient": "590",
+    "strIngredient": "Warm Water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "591",
+    "strIngredient": "Boiling Water",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "592",
+    "strIngredient": "Pickle Juice",
+    "calories100g": 0
+  },
+  {
+    "idIngredient": "593",
+    "strIngredient": "Powdered Sugar",
+    "calories100g": 389
+  },
+  {
+    "idIngredient": "594",
+    "strIngredient": "Kielbasa",
+    "calories100g": 337
+  },
+  {
+    "idIngredient": "595",
+    "strIngredient": "Polish Sausage",
+    "calories100g": 326
+  },
+  {
+    "idIngredient": "596",
+    "strIngredient": "Sauerkraut",
+    "calories100g": 22
+  },
+  {
+    "idIngredient": "597",
+    "strIngredient": "Caraway Seed",
+    "calories100g": 333
+  },
+  {
+    "idIngredient": "598",
+    "strIngredient": "Herring",
+    "calories100g": 158
+  },
+  {
+    "idIngredient": "599",
+    "strIngredient": "Jam",
+    "calories100g": 250
+  },
+  {
+    "idIngredient": "600",
+    "strIngredient": "Mulukhiyah",
+    "calories100g": 37
+  },
+  {
+    "idIngredient": "601",
+    "strIngredient": "Sushi Rice",
+    "calories100g": 130
+  },
+  {
+    "idIngredient": "602",
+    "strIngredient": "Figs",
+    "calories100g": 74
+  },
+  {
+    "idIngredient": "603",
+    "strIngredient": "Cider",
+    "calories100g": 47
+  },
+  {
+    "idIngredient": "604",
+    "strIngredient": "Beetroot",
+    "calories100g": 43
+  },
+  {
+    "idIngredient": "605",
+    "strIngredient": "Sardines",
+    "calories100g": 208
+  },
+  {
+    "idIngredient": "606",
+    "strIngredient": "Ciabatta",
+    "calories100g": 271
+  },
+  {
+    "idIngredient": "607",
+    "strIngredient": "Buckwheat",
+    "calories100g": 343
+  },
+  {
+    "idIngredient": "608",
+    "strIngredient": "Prunes",
+    "calories100g": 240
+  }
+]
